@@ -1,5 +1,11 @@
 h1 {
     font-size: 25px;
+    color: #22223B;
+}
+
+h2 {
+    font-size: 20px;
+    color: #22223B;
 }
 
 body {
@@ -7,5 +13,32 @@ body {
     padding-top: 50px;
     padding-left: 100px;
     padding-right: 100px;
+    background-color: #F2E9E4;
 }
 
+p {
+    color:#22223B;
+}
+
+.title-box {
+    border: 2px solid #9A8C98;
+    border-radius: 10px;
+    padding: 1.5rem;
+    background-color: #9A8C98;
+}
+
+.problem-description {
+    border: 2px solid #c9ada7;
+    border-radius: 10px;
+    padding: 1.5rem;
+    background-color: #C9ADA7;
+    margin-bottom: 1rem;
+}
+
+.app-description {
+    border: 2px solid #c9ada7;
+    border-radius: 10px;
+    padding: 1.5rem;
+    background-color: #C9ADA7;
+    margin-bottom: 1rem;
+}
