@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #F2E9E4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+header h1 {
+    color: #22223B;
+    font-family: "Playfair Display SC", Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -0.5px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .material-symbols-outlined {
+    color: #22223B;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 7px;
+    border: 0.5px solid #4A4E69;
+    background: rgba(201, 173, 167, 0.65);
+    margin: 0 1.5rem; 
+    padding: 0.5rem 1rem;
+}
+
+.search-bar p {
+    margin: 0;
+    color: #4A4E69;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.24px;
+}
+
+.search-bar .material-symbols-outlined {
+    color: #4A4E69;
+}
+
+.filters {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: #4A4E69;
+    color: #F2E9E4;
+    font-family: Poppins;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.18px;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;  
+}
+
+.nearby {
+    background-color: #22223B;;
+}
+
+.recommendations {
+    background-color: #C9ADA7;
+}
+
+.filter-btn span {
+    font-size: 16px;
+}
+
+.filter-btn:hover {
+    opacity: 0.85;
+}
+
+.discovery-feed {
+    margin: 1.5rem;
+    color: #22223B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.discovery-card {
+    margin: 1rem 1.5rem;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 7px;
+    border: 0.5px solid #C9ADA7;
+    background-color: rgba(201, 173, 167, 0.35);
+    box-shadow: -2px -2px 15px 0px rgba(201, 173, 167, 0.60), 2px 2px 15px 0px rgba(201, 173, 167, 0.60);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.profile-pic {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-text p {
+    margin: 0;
+    font-size: 12px;
+    color: #22223B;
+}
+
+.user-text p strong {
+    font-weight: 600;
+}
+
+.location {
+    color: #6E6A7C;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 11px;
+}
+
+.rating {
+    background: #FFF;
+    border-radius: 50%;
+    padding: 0.5rem;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4A4E69;
+    border: 1px solid #ccc;
+    min-width: 50px;
+    text-align: center;
+}
+
+.card-body img {
+    width: 48%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.card-images {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    font-size: 12px;
+    color: #22223B;
+    margin-bottom: 0.75rem;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 10px;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-weight: 400;
+}
+
+.tag.light {
+    background-color: #E5D7D0;
+    color: #22223B;
+}
+
+.tag.dark {
+    background-color: #4A4E69;
+    color: #F2E9E4;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 1rem;
+    color: #6E6A7C;
+}
+
+.bookmark-icon {
+    color: #6E6A7C;
+}
+
+.timestamp {
+    font-size: 10px;
+    color: #6E6A7C;
+    margin-top: 0.5rem;
+}
