@@ -263,3 +263,87 @@ nav .material-symbols-outlined {
 .dark-pink-btn {
     background-color: #C9ADA7;
 }
+
+.splash-container {
+    height: 100vh;
+    background-color: #F2E9E4;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+}
+
+.splash-bg-rect {
+    width: 80%;
+    max-width: 3500px;
+    height: 400px;
+    background-color: rgba(201, 173, 167, 0.56);
+    opacity: 56%;
+    border-radius: 15px;
+    grid-area: 1 / 1;
+    z-index: 0;
+}
+
+.splash-bg-rect-1 {
+    width: 190px;
+    height: 110px;
+    background-color: rgba(201, 173, 167, 0.63);
+    border-radius: 10px;
+    grid-area: 1 / 1;
+    z-index: 1;
+    justify-self: start;
+    align-self: start;
+    transform: translate(20px, 100px);
+}
+
+.splash-bg-rect-2 {
+    width: 170px;
+    height: 190px;
+    background-color: rgba(201, 173, 167, 0.78);
+    border-radius: 10px;
+    grid-area: 1 / 1;
+    z-index: 1;
+    justify-self: end;
+    align-self: end;
+    transform: translate(-60px, -35px);
+}
+
+.splash-content {
+    text-align: center;
+    grid-area: 1 / 1;
+    z-index: 1;
+}
+
+.splash-subtext {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color: #4A4E69;
+    margin-bottom: 0rem;
+}
+
+.splash-title {
+    font-family: "Playfair Display SC", Georgia, 'Times New Roman', Times, serif;
+    font-size: 60px;
+    color: #22223B;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.splash-signup-btn {
+    background-color: #4A4E69;
+    color: #F2E9E4;
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 5rem;
+    font-size: 14px;
+}
+
+.splash-login {
+    font-size: 10px;
+    color: #6E6A7C;
+    margin-top: 0.5rem;
+}
+
+.splash-login a {
+    color: #6E6A7C;
+    text-decoration: underline;
+}
