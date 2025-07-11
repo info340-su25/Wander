@@ -15,7 +15,7 @@
     </head>
     <body>
         <header>
-            <h1> Wander</h1>
+            <h1>Wander</h1>
             <nav>
                 <ul>
                     <li><a href="#" class="btn"><span class="material-symbols-outlined">notifications</span></a></li>
@@ -33,10 +33,10 @@
                 <button class="filter-btn">
                     <span class="material-symbols-outlined">trending_up</span> Trending
                 </button>
-                <button class="filter-btn nearby">
+                <button class="filter-btn dark-blue-btn">
                     <span class="material-symbols-outlined">location_on</span> Nearby
                 </button>
-                <button class="filter-btn recommendations">
+                <button class="filter-btn dark-pink-btn">
                     <span class="material-symbols-outlined">person_heart</span> Recommendations
                 </button>
                 <button class="filter-btn">
@@ -45,44 +45,85 @@
             </section>
 
             <section>
-                <h1 class="discovery-feed">DISCOVERY FEED</h1>
+                <h2 class="discovery-feed">DISCOVERY FEED</h2>
 
-                <div class="discovery-card">
-                    <div class="card-header">
-                      <div class="user-info">
-                        <img src="img/nicole.jpeg" alt="Profile picture of Nicole" class="profile-pic">
-                        <div class="user-text">
-                          <p><strong>Nicole</strong> reviewed <strong>Taipei 101</strong></p>
-                          <p class="location"><span class="material-symbols-outlined">location_on</span> Taipei, Taiwan</p>
+                <div class="discovery-card-container">
+                  <!-- card one -->
+                  <div class="discovery-card">
+                      <div class="card-header">
+                        <div class="user-info">
+                          <img src="img/nicole.jpeg" alt="Profile picture of Nicole" class="profile-pic">
+                          <div class="user-text">
+                            <p><strong>Nicole</strong> reviewed <strong>Taipei 101</strong></p>
+                            <p class="location"><span class="material-symbols-outlined">location_on</span> Taipei, Taiwan</p>
+                          </div>
+                        </div>
+                        <div class="rating">4.6/5</div>
+                      </div> 
+                    
+                      <div class="card-body">
+                        <div class="card-images">
+                          <img src="img/vas-qhu2nFWqVEU-unsplash.jpg" alt="Taipei 101 Day">
+                          <img src="img/timo-volz-4M25kv8v7_0-unsplash.jpg" alt="Taipei 101 Night">
+                        </div>
+                        <p class="card-text">An iconic skyscraper with stunning city views from the observatory. The high-speed elevator is impressive, and the architecture is a must-see. The mall at the base offers luxury shopping and great dining options. It can get crowded, and ticket prices are a bit steep, but overall, a worthwhile experience if you're visiting Taipei.</p>
+                        <div class="tags">
+                          <span class="tag dark-pink-btn">Scenic</span>
+                          <span class="tag ">Group-friendly</span>
+                          <span class="tag dark-blue-btn">Fee required</span>
                         </div>
                       </div>
-                      <div class="rating">4.2/5</div>
-                    </div>
-                  
-                    <div class="card-body">
-                      <div class="card-images">
-                        <img src="img/vas-qhu2nFWqVEU-unsplash.jpg" alt="Taipei 101 Day">
-                        <img src="img/timo-volz-4M25kv8v7_0-unsplash.jpg" alt="Taipei 101 Night">
+                    
+                      <div class="card-footer">
+                        <div class="footer-icons">
+                          <span class="material-symbols-outlined">favorite</span>
+                          <span class="material-symbols-outlined">chat_bubble</span>
+                        </div>
+                        <span class="material-symbols-outlined bookmark-icon">bookmark</span>
                       </div>
-                      <p class="card-text">An iconic skyscraper with stunning city views from the observatory. The high-speed elevator is impressive, and the architecture is a must-see. The mall at the base offers luxury shopping and great dining options. It can get crowded, and ticket prices are a bit steep, but overall, a worthwhile experience if you're visiting Taipei.</p>
-                      <div class="tags">
-                        <span class="tag light">Scenic</span>
-                        <span class="tag dark">Group-friendly</span>
-                        <span class="tag dark">Fee required</span>
+                    
+                      <div class="timestamp">Posted 2 hrs ago</div>
+                    </div>   
+                    
+                    <!-- card two -->
+                    <div class="discovery-card">
+                      <div class="card-header">
+                        <div class="user-info">
+                          <img src="img/nicole.jpeg" alt="Profile picture of Nicole" class="profile-pic">
+                          <div class="user-text">
+                            <p><strong>Nicole</strong> reviewed <strong>Taipei 101</strong></p>
+                            <p class="location"><span class="material-symbols-outlined">location_on</span> Taipei, Taiwan</p>
+                          </div>
+                        </div>
+                        <div class="rating">4.6/5</div>
+                      </div> 
+                    
+                      <div class="card-body">
+                        <div class="card-images">
+                          <img src="img/vas-qhu2nFWqVEU-unsplash.jpg" alt="Taipei 101 Day">
+                          <img src="img/timo-volz-4M25kv8v7_0-unsplash.jpg" alt="Taipei 101 Night">
+                        </div>
+                        <p class="card-text">A breathtaking symbol of Florence with its iconic dome and intricate façade. Climbing to the top offers panoramic views of the city—very worth the hike! I will caution that the stairway up is quite claustrophobic. However, the interior is beautiful, though less ornate than the outside. Lines can be long, so booking in advance is a good idea.</p>
+                        <div class="tags">
+                          <span class="tag dark-pink-btn">Scenic</span>
+                          <span class="tag ">Group-friendly</span>
+                          <span class="tag dark-blue-btn">Fee required</span>
+                        </div>
                       </div>
-                    </div>
-                  
-                    <div class="card-footer">
-                      <div class="footer-icons">
-                        <span class="material-symbols-outlined">favorite</span>
-                        <span class="material-symbols-outlined">chat_bubble</span>
+                    
+                      <div class="card-footer">
+                        <div class="footer-icons">
+                          <span class="material-symbols-outlined">favorite</span>
+                          <span class="material-symbols-outlined">chat_bubble</span>
+                        </div>
+                        <span class="material-symbols-outlined bookmark-icon">bookmark</span>
                       </div>
-                      <span class="material-symbols-outlined bookmark-icon">bookmark</span>
+                    
+                      <div class="timestamp">Posted 2 hrs ago</div>
                     </div>
-                  
-                    <!-- Timestamp -->
-                    <div class="timestamp">Posted 2 hrs ago</div>
-                  </div>                  
+
+                </div>
+
             </section>
         </main>
 
