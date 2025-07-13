@@ -282,7 +282,7 @@ nav .material-symbols-outlined {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    z-index: 9999;
+    z-index: 10;
 }
 
 .bottom-nav .material-symbols-outlined, .log-bottom-nav .material-symbols-outlined {
@@ -299,7 +299,11 @@ nav .material-symbols-outlined {
 @media (min-width: 768px) {
     .bottom-nav, .log-bottom-nav {
         justify-content: center;
+<<<<<<< Updated upstream
         gap: 6.5rem; 
+=======
+        gap: 6.5rem;
+>>>>>>> Stashed changes
     }
 }
 
