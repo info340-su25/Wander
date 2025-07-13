@@ -1,0 +1,106 @@
+.trip-container {
+    background-color: #F2E9E4;
+    max-width: 3500px;
+    width: 100%;
+}
+
+.trip-header {
+    background-color: #F2E9E4;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.trip-header nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.trip-header nav .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #22223B;
+}
+
+.trip-content {
+    padding: 20px;
+    background-color: #F2E9E4;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    width: 70%;
+    margin-left: 4rem;
+    padding-bottom: 85px;
+}
+
+.trip-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #4A4E69;
+    margin-bottom: 30px;
+}
+
+.trip-form {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4A4E69;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.title-input, .search-input,
+.invite-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(201, 173, 167, 0.32);
+    font-size: 12px;
+    color: #C4A099;
+    border: 1px solid #C9ADA7;
+}
+
+.title-input::placeholder, .search-input::placeholder,
+.comments-textarea::placeholder,
+.invite-input::placeholder {
+    color: #C4A099;
+}
+
+.comments-textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(201, 173, 167, 0.32);
+    font-size: 12px;
+    color: #C4A099;
+    border: 1px solid #C9ADA7;
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.add-button {
+    background-color: #4A4E69;
+    color: #F2E9E4;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    width: fit-content;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    transition: background-color 0.2s;
+}
+
+.add-button:hover {
+    background-color: #22223B;
+}
