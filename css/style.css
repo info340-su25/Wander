@@ -1016,3 +1016,119 @@ nav .material-symbols-outlined {
 .add-button:hover {
     background-color: #22223B;
 }
+
+/* ------------ main profile page ------------ */
+header.profile-nav{
+    position: relative;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+}
+
+nav .material-symbols-outlined {
+    color: #22223B;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .material-symbols-outlined {
+    font-size: 24px;
+    color: #22223B;
+}
+
+main.profile-body {
+    color: #22223B;
+    font-family: Poppins, sans-serif;
+}
+
+main.profile-body h1 {
+    color: #22223B;
+    text-align: center;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.stats-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding-left: 2rem;
+    margin: 1rem auto;
+  }
+  
+.stats-bar .stat {
+    text-align: center;
+    color: #22223B;
+    font-family: 'Poppins', sans-serif;
+}
+  
+.stats-bar .stat strong {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-profile-pic {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+}
+
+.username {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.edit-profile-btn {
+    color: #fff;
+    font-size: 0.5rem;
+    border-radius: 12px;
+    padding: 2px 12px;
+    border: 1px solid #C4A099;
+    background: rgba(201, 173, 167, 0.60);
+}
+
+.edit-profile-btn:hover {
+    color: #fff;
+    background: rgba(201, 173, 167, 0.40);
+    border: 1px solid #C4A099;
+}
+
+.stats-row div {
+    font-size: 0.95rem;
+}
+
+.posts-grid img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.post-img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+}
