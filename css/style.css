@@ -299,12 +299,98 @@ nav .material-symbols-outlined {
 @media (min-width: 768px) {
     .bottom-nav, .log-bottom-nav {
         justify-content: center;
-<<<<<<< Updated upstream
         gap: 6.5rem; 
-=======
-        gap: 6.5rem;
->>>>>>> Stashed changes
     }
+}
+
+/* ------------ menu ------------ */
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 375px;
+    height: 100vh;
+    background: #F2DFD5;
+    box-shadow: -5px 0px 10px 0px rgba(196, 160, 153, 0.50);
+    z-index: 1000;
+}
+
+.menu-header {
+    position: relative;
+    padding: 2rem 1.5rem 0rem 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.menu-title {
+    color: #22223B;
+    text-align: left;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.44px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+    color: #C4A099;
+    cursor: pointer;
+    font-size: 30px;
+    transition: opacity 0.2s;
+}
+
+.close-btn:hover {
+    color:#22223B
+}
+
+.menu-content {
+    flex: 1;
+    padding: 2rem 1.5rem;
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+
+    /* contents inside button */
+    color: #C4A099;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.28px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-align: left;
+}
+
+.menu-button:hover {
+    background: rgba(201, 173, 167, 0.3);
+}
+
+.menu-button:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-button .material-symbols-outlined {
+    font-size: 20px;
 }
 
 /* ------------ splash page ------------ */
@@ -670,3 +756,4 @@ nav .material-symbols-outlined {
 .post-button:hover {
     background-color: #22223B;
 }
+
