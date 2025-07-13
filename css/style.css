@@ -52,7 +52,7 @@ nav .material-symbols-outlined {
 .search-bar p {
     margin: 0;
     color: #4A4E69;
-    font-family: Poppins;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -77,7 +77,7 @@ nav .material-symbols-outlined {
     gap: 0.25rem;
     background-color: #4A4E69;
     color: #F2E9E4;
-    font-family: Poppins;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 11px;
     font-style: normal;
     font-weight: 400;
@@ -106,7 +106,7 @@ nav .material-symbols-outlined {
 .discovery-feed {
     margin: 1.5rem 1.5rem 0.5rem 1.5rem;
     color: #22223B;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -116,7 +116,7 @@ nav .material-symbols-outlined {
 .discovery-card {
     margin: 1rem 1.5rem;
     padding: 1rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     border-radius: 7px;
     border: 0.5px solid #C9ADA7;
     background-color: rgba(201, 173, 167, 0.35);
@@ -157,7 +157,7 @@ nav .material-symbols-outlined {
 .user-text p {
     margin: 0;
     color: #22223B;
-    font-family: Poppins;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -196,7 +196,7 @@ nav .material-symbols-outlined {
     /* contents inside the circle */
     color: #03563C;
     text-align: center;
-    font-family: Poppins;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
@@ -234,7 +234,7 @@ nav .material-symbols-outlined {
     font-weight: 400;
     color: #FFF;
     text-align: center;
-    font-family: Poppins;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
@@ -265,11 +265,11 @@ nav .material-symbols-outlined {
     margin-top: 0.5rem;
 }
 
-.dark-blue-btn {
-    background-color: #22223B;;
+.filter-btn.dark-blue-btn, .tag.dark-blue-btn{
+    background-color: #22223B;
 }
 
-.dark-pink-btn {
+.filter-btn.dark-pink-btn, .tag.dark-pink-btn{
     background-color: #C9ADA7;
 }
 
@@ -327,7 +327,7 @@ nav .material-symbols-outlined {
 .menu-title {
     color: #22223B;
     text-align: left;
-    font-family: Poppins;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
@@ -367,7 +367,7 @@ nav .material-symbols-outlined {
 
     /* contents inside button */
     color: #C4A099;
-    font-family: Poppins;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -406,7 +406,7 @@ nav .material-symbols-outlined {
 
 .menu-footer p {
     color: #C4A099;
-    font-family: Poppins;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -448,7 +448,7 @@ nav .material-symbols-outlined {
 }
 
 .splash-subtext {
-    font-family: 'Poppins', sans-serif;
+    font-family: ''Poppins', Arial, Helvetica, sans-serif';
     font-size: 30px;
     color: #4A4E69;
     margin-bottom: 0rem;
@@ -504,7 +504,7 @@ nav .material-symbols-outlined {
     border-radius: 15px;
     grid-area: 1 / 1;
     z-index: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     display: grid;
     place-items: center;
     padding: 2rem;
@@ -668,7 +668,7 @@ nav .material-symbols-outlined {
 .log-content {
     padding: 20px;
     background-color: #F2E9E4;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     width: 70%;
     margin-left: 4rem;
     padding-bottom: 85px;
@@ -823,7 +823,7 @@ nav .material-symbols-outlined {
 .view-content {
     padding: 20px;
     background-color: #F2E9E4;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     width: 80%;
     margin-left: 3rem;
 }
@@ -867,7 +867,7 @@ nav .material-symbols-outlined {
     gap: 0.25rem;
     background-color: #4A4E69;
     color: #F2E9E4;
-    font-family: Poppins;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 11px;
     font-style: normal;
     font-weight: 400;
