@@ -309,30 +309,6 @@ nav .material-symbols-outlined {
     z-index: 0;
 }
 
-.splash-bg-rect-1 {
-    width: 190px;
-    height: 110px;
-    background-color: rgba(201, 173, 167, 0.63);
-    border-radius: 10px;
-    grid-area: 1 / 1;
-    z-index: 1;
-    justify-self: start;
-    align-self: start;
-    transform: translate(20px, 100px);
-}
-
-.splash-bg-rect-2 {
-    width: 170px;
-    height: 190px;
-    background-color: rgba(201, 173, 167, 0.78);
-    border-radius: 10px;
-    grid-area: 1 / 1;
-    z-index: 1;
-    justify-self: end;
-    align-self: end;
-    transform: translate(-60px, -35px);
-}
-
 .splash-content {
     text-align: center;
     grid-area: 1 / 1;
