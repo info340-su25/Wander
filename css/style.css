@@ -494,6 +494,22 @@ nav .material-symbols-outlined {
     text-decoration: underline;
 }
 
+.splash-footer {
+    text-align: center;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    color: #C4A099; 
+    font-weight: 400;
+    line-height: 0.15;
+}
+
+.copyright {
+    font-size: 11px;
+}
+
+.all-rights-reserved {
+    font-size: 8px;
+}
+
 /* ------------ sign-in and login page ------------ */
 .signin-container, .login-container {
     height: 100vh;
