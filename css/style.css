@@ -467,7 +467,7 @@ nav .material-symbols-outlined {
     margin-bottom: 1rem;
 }
 
-.splash-signup-btn a {
+.splash-signup-btn {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     background-color: #4A4E69;
     color: #F2E9E4;
@@ -489,7 +489,7 @@ nav .material-symbols-outlined {
     margin-top: 0.5rem;
 }
 
-.splash-login a {
+.splash-login {
     color: #6E6A7C;
     text-decoration: underline;
 }
@@ -613,7 +613,7 @@ nav .material-symbols-outlined {
     color: #6E6A7C;
 }
 
-.signin-btn a, .login-btn a {
+.signin-btn, .login-btn {
     background-color: #4A4E69;
     color: #F2E9E4;
     border: none;
@@ -1206,7 +1206,7 @@ main.profile-body h1 {
     padding-left: 1rem;
 }
 
-.add-new-trip {
+.add-new-trip a {
     font-size: 12px;
     color: #C4A099;
     display: flex;
@@ -1223,7 +1223,7 @@ main.profile-body h1 {
 
 }
 
-.add-new-trip:hover {
+.add-new-trip a:hover {
     color: #4A4E69;
 }
 
