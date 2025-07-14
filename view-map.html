@@ -14,17 +14,15 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <header class="view-header">
+            <nav>
+                <ul>
+                    <li><a href="#" class="btn"><span class="material-symbols-outlined">menu</span></a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <div class="view-container">
-            <div class="view-header">
-                <header>
-                    <nav>
-                        <ul>
-                            <li><a href="#" class="btn"><span class="material-symbols-outlined">menu</span></a></li>
-                        </ul>
-                    </nav>
-                </header>
-            </div>
+        <main class="view-container">
 
             <div class="view-content">
                 <h1 class="view-title">Destinations</h1>
@@ -50,13 +48,12 @@
 
 
             </div>
+            <!-- ideally a real map will scale once implemented, but for now placeholder image -->
+            <div class="map-container">
+                <img src="img/map.jpg" alt="digital map image" class="view-map-img">
+            </div>
 
-        </div>
-
-        <!-- ideally a real map will scale once implemented, but for now placeholder image -->
-        <div class="map-container">
-            <img src="img/map.jpg" alt="digital map image" class="view-map-img">
-        </div>
+        </main>
 
         <footer class="view-bottom-nav">
             <a href="#"><span class="material-symbols-outlined">home</span></a>
