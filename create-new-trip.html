@@ -27,32 +27,35 @@
             <div class="trip-content">
                 <h1 class="trip-title">Create a new trip</h1>
 
-                <div class="trip-form">
-                    <label class="form-label">Title</label>
-                    <input type="text" class="title-input" placeholder="Enter a title">
-                </div>
-
-                <div class="trip-form">
-                    <label class="form-label">Destination</label>
-                    <input type="text" class="search-input" placeholder="Search">
-                </div>
-
-                <div class="trip-form">
-                    <label class="form-label">Description</label>
-                    <textarea class="comments-textarea" placeholder="Add a short description"></textarea>
-                </div>
-
-                <div class="trip-form">
-                    <label class="form-label">Add Attractions</label>
-                    <input type="text" class="search-input" placeholder="Search">
-                </div>
-
-                <div class="trip-form">
-                    <label class="form-label">Invite Collaborators</label>
-                    <input type="text" class="invite-input" placeholder="Enter an email">
-                </div>
-
-                <button class="add-button"><a href="view-trips.html">Add</a></button>
+                <form>
+                    <div class="trip-form">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="title-input" placeholder="Enter a title">
+                    </div>
+    
+                    <div class="trip-form">
+                        <label for="destination" class="form-label">Destination</label>
+                        <input type="text" class="search-input" placeholder="Search">
+                    </div>
+    
+                    <div class="trip-form">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="comments-textarea" placeholder="Add a short description"></textarea>
+                    </div>
+    
+                    <div class="trip-form">
+                        <label for="add-attractions" class="form-label">Add Attractions</label>
+                        <input type="text" class="search-input" placeholder="Search">
+                    </div>
+    
+                    <div class="trip-form">
+                        <label for="collaborators" class="form-label">Invite Collaborators</label>
+                        <input type="text" class="invite-input" placeholder="Enter an email">
+                    </div>
+    
+                    <!-- INVALID -->
+                    <button class="add-button"><a href="view-trips.html">Add</a></button>
+                </form>
             </div>
 
         </main>

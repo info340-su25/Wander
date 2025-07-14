@@ -29,46 +29,49 @@
             <div class="log-content">
                 <h1 class="log-title">Create a new log</h1>
 
-                <div class="log-form">
-                    <label class="form-label">Destination</label>
-                    <input type="text" class="search-input" placeholder="Search">
-                </div>
-
-                <div class="log-form">
-                    <label class="form-label">Upload Attachments</label>
-                    <div class="upload-box">
-                        <span class="material-symbols-outlined upload-plus">add</span>
+                <form>
+                    <div class="log-form">
+                        <label for="destination" class="form-label">Destination</label>
+                        <input type="text" class="search-input" placeholder="Search">
                     </div>
-                </div>
-
-                <div class="log-form">
-                    <label class="form-label">Give this destination a rating</label>
-                    <input type="text" class="rating-input" placeholder="Give a rating out of 5">
-                </div>
-
-                <div class="log-form">
-                    <label class="form-label">Comments</label>
-                    <textarea class="comments-textarea" placeholder="Write any comments"></textarea>
-                </div>
-
-                <div class="log-form">
-                    <label class="form-label">Tags</label>
-
-                    <!-- note to self for later: how do i implement multiple select? -->
-                    <select class="tags-select">
-                        <option value="">Select</option>
-                        <option value="group-friendly">Group-friendly</option>
-                        <option value="fee-required">Fee required</option>
-                        <option value="no-fee-required">No fee required</option>
-                        <option value="scenic">Scenic</option>
-                        <option value="historic">Historic</option>
-                        <option value="shopping-friendly">Shopping friendly</option>
-                        <option value="walking-friendly">Walking friendly</option>
-                        <option value="not-walking-friendly">Not walking friendly</option>
-                    </select>
-                </div>
-
-                <button class="post-button"><a href="index.html">Post</a></button>
+    
+                    <div class="log-form">
+                        <label for="attachments" class="form-label">Upload Attachments</label>
+                        <div class="upload-box">
+                            <span class="material-symbols-outlined upload-plus">add</span>
+                        </div>
+                    </div>
+    
+                    <div class="log-form">
+                        <label for="rating" class="form-label">Give this destination a rating</label>
+                        <input type="text" class="rating-input" placeholder="Give a rating out of 5">
+                    </div>
+    
+                    <div class="log-form">
+                        <label for="comments" class="form-label">Comments</label>
+                        <textarea class="comments-textarea" placeholder="Write any comments"></textarea>
+                    </div>
+    
+                    <div class="log-form">
+                        <label for="tags" class="form-label">Tags</label>
+    
+                        <!-- note to self for later: how do i implement multiple select? -->
+                        <select class="tags-select">
+                            <option value="">Select</option>
+                            <option value="group-friendly">Group-friendly</option>
+                            <option value="fee-required">Fee required</option>
+                            <option value="no-fee-required">No fee required</option>
+                            <option value="scenic">Scenic</option>
+                            <option value="historic">Historic</option>
+                            <option value="shopping-friendly">Shopping friendly</option>
+                            <option value="walking-friendly">Walking friendly</option>
+                            <option value="not-walking-friendly">Not walking friendly</option>
+                        </select>
+                    </div>
+    
+                    <!-- INVALID -->
+                    <button class="post-button"><a href="index.html">Post</a></button>
+                </form>
             </div>
 
         </main>
