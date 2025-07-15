@@ -1297,6 +1297,24 @@ main.profile-body h1 {
     }
 }
 
+@media (min-width: 992px) {
+    header h1 {
+        font-size: 40px;
+    }  
+
+    nav .material-symbols-outlined {
+        font-size: 30px;
+    }
+
+    .filter-btn {
+        font-size: 0.8rem;
+    }
+
+    .discovery-feed {
+        font-size: 20px;
+    }
+}
+
 @media (min-width: 1024px) {
     .log-content, .trip-content, .view-content {
         margin-left: 6rem;
