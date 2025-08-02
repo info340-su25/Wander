@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import viteLogo from '/vite.svg'
-import Header from './components/Header';
-import SearchBar from './components/SearchBar';
-import Filters from './components/Filters';
-import DiscoveryFeed from './components/DiscoveryFeed';
-import Footer from './components/Footer';
+import Header from './components/index/Header';
+import SearchBar from './components/index/SearchBar';
+import Filters from './components/index/Filters';
+import DiscoveryFeed from './components/index/DiscoveryFeed';
+import Footer from './components/index/Footer';
 
 function App() {
   return (
