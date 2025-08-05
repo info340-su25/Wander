@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-function Login() {
+function Login(props) {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState(props.email || '');
+    const [password, setPassword] = useState(props.password || '');
     const [rememberMe, setRememberMe] = useState(false);
 
     const handleSubmit = (event) => {
