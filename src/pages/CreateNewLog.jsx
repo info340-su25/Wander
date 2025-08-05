@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from '../components/Footer';
 
 function CreateNewLog() {
     const [destination, setDestination] = useState('');

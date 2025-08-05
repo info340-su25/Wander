@@ -7,9 +7,15 @@ export default function Footer() {
             <Link to="/">
                 <span className="material-symbols-outlined">home</span>
             </Link>
-            <a href="view-trips.html"><span className="material-symbols-outlined">format_list_bulleted</span></a>
-            <a href="create-new-log.html"><span className="material-symbols-outlined">add_box</span></a>
-            <a href="view-map.html"><span className="material-symbols-outlined">map</span></a>
+            <Link to="/view-trips">
+                <span className="material-symbols-outlined">format_list_bulleted</span>
+            </Link>
+            <Link to="/create-log">
+                <span className="material-symbols-outlined">add_box</span>
+            </Link>
+            <Link to="/map">
+                <span className="material-symbols-outlined">map</span>
+            </Link>
             <Link to="/profile">
                 <span className="material-symbols-outlined">account_circle</span>
             </Link>

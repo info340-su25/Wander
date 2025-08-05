@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from '../components/Footer';
 
 function ViewMap() {
     const [searchTerm, setSearchTerm] = useState('');
