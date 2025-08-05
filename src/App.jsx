@@ -1,24 +1,14 @@
-import React, { useState } from 'react'
-import viteLogo from '/vite.svg'
-import Header from './components/index/Header';
-import SearchBar from './components/index/SearchBar';
-import Filters from './components/index/Filters';
-import DiscoveryFeed from './components/index/DiscoveryFeed';
-import Footer from './components/Footer';
+import React from 'react';
+import { Routes, Route } from 'react-router'; // you're using react-router, not react-router-dom
+import Home from './pages/Home';
+import ProfilePage from './pages/ProfilePage';
 
-function App() {
+export default function App() {
     return (
-        <>
-            <Header />
-            <main>
-            <SearchBar />
-            <Filters />
-            <DiscoveryFeed />
-            </main>
-            <Footer />
-        </>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            {/* You can add more routes later here like /post/:id */}
+        </Routes>
     );
 }
-
-
-export default App
