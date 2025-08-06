@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Footer from '../components/Footer';
 
-function CreateNewLog() {
-    const [destination, setDestination] = useState('');
-    const [rating, setRating] = useState('');
-    const [comments, setComments] = useState('');
-    const [tags, setTags] = useState([]);
+function CreateNewLog(props) {
+    const log = props.logData;
+
+    const [destination, setDestination] = useState(log.destination || '');
+    const [rating, setRating] = useState(log.rating || '');
+    const [comments, setComments] = useState(log.comments || '');
+    const [tags, setTags] = useState(log.tags || []);
     const [file, setFile] = useState(null);
 
     const handleSubmit = (event) => {

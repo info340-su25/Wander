@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function PlacesBeen() {
-
-    const [trips] = useState([
-        {id: 1, place: 'Florence', alt: "Cathedral of Santa Maria del Fiore in Florence, Italy", path: '/img/alex-ghizila-k5NVjNCPR48-unsplash.jpg'},
-        {id: 2, place: 'Shanghai', alt: "The Bund in Shanghai, China", path: '/img/li-yang-5h_dMuX_7RE-unsplash.jpg'}
-    ]);
-
+function PlacesBeen(props) {
+    const trips = props.placesBeenData;
     return (
         <div>
             <header className="places-been-header">

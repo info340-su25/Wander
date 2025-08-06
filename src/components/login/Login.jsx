@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 
 function Login(props) {
+    const info = props.userData;
 
-    const [email, setEmail] = useState(props.email || '');
-    const [password, setPassword] = useState(props.password || '');
+    const [email, setEmail] = useState(info.email || '');
+    const [password, setPassword] = useState(info.password || '');
     const [rememberMe, setRememberMe] = useState(false);
 
     const handleSubmit = (event) => {
