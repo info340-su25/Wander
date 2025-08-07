@@ -6,10 +6,10 @@ import Filters from '../components/index/Filters';
 import DiscoveryFeed from '../components/index/DiscoveryFeed';
 import Footer from '../components/Footer';
 
-function App() {
+export default function Home({ openMenu }) {
     return (
         <>
-            <Header />
+            <Header openMenu={openMenu} />
             <main>
                 <SearchBar />
                 <Filters />
@@ -19,6 +19,3 @@ function App() {
         </>
     );
 }
-
-
-export default App

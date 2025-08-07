@@ -362,6 +362,10 @@ nav .material-symbols-outlined {
     cursor: pointer;
     font-size: 30px;
     transition: opacity 0.2s;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
 }
 
 .close-btn:hover {
@@ -711,6 +715,11 @@ style it the way we wanted. */
     justify-content: center;
     text-decoration: none;
     color: #22223B;
+}
+
+.log-header nav .btn:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .header nav .material-symbols-outlined {
