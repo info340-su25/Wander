@@ -1,8 +1,18 @@
 import React from 'react';
 
 export default function DiscoveryCard(props) {
-	const { userImg, userName, place, location, rating, images, text, tags, timestamp } = props;
+	const { userImg, userName, place, location, rating, images, text, tags, timestamp, likes, liked, saved, onLike, onSave } = props;
 
+	let likeClass = 'material-symbols-outlined like-icon';
+	if (liked) {
+		likeClass += ' liked';
+	}
+
+	let bookmarkClass = 'material-symbols-outlined bookmark-icon';
+	if (saved) {
+		bookmarkClass += ' saved';
+	}
+	
 	return (
 		<div className="col-12 col-md-6 col-xl-4 mb-4">
 			<div className="discovery-card">
@@ -33,10 +43,14 @@ export default function DiscoveryCard(props) {
 
 				<div className="card-footer">
 					<div className="footer-icons">
-						<span className="material-symbols-outlined">favorite</span>
-						<span className="material-symbols-outlined">chat_bubble</span>
+						<button className={likeClass} onClick={onLike} aria-label="Like post">
+							favorite
+						</button>
+						<span className="material-symbols-outlined chat-icon">chat_bubble</span>
 					</div>
-					<span className="material-symbols-outlined bookmark-icon">bookmark</span>
+					<button className={bookmarkClass} onClick={onSave} aria-label="Save post">
+						bookmark
+					</button>
 				</div>
 
 				<div className="timestamp">{timestamp}</div>

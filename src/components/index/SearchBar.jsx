@@ -8,15 +8,7 @@ export default function SearchBar() {
         console.log("Search submitted:", search);
         // Future thing to worry about :D
     };
-
-    // return (
-    //     <section className="search-bar">
-    //         <span className="material-symbols-outlined">search</span>
-    //         <p>Search a travel destination, attraction, etc.</p>
-    //     </section>
-    // );
-
-    // This is broken, need to find a way to make this not break 
+    
     return (
         <section className="search-bar">
             <form onSubmit={handleSubmit}>

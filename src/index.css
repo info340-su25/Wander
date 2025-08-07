@@ -39,29 +39,37 @@ nav .material-symbols-outlined {
 }
 
 .search-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-radius: 7px;
-    border: 0.5px solid #4A4E69;
-    background: rgba(201, 173, 167, 0.65);
-    margin: 0 1.5rem; 
-    padding: 0.5rem 1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	border-radius: 7px;
+	border: 0.5px solid #4A4E69;
+	background: rgba(201, 173, 167, 0.65);
+	margin: 0 1.5rem;
+	padding: 0.5rem 1rem;
 }
 
-.search-bar p {
-    margin: 0;
-    color: #4A4E69;
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.24px;
+.search-bar form {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	width: 100%;
+	gap: 0.5rem;
+}
+
+.search-bar input {
+	border: none;
+	background: transparent;
+	outline: none;
+	color: #4A4E69;
+	font-family: 'Poppins', Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	width: 100%;
 }
 
 .search-bar .material-symbols-outlined {
-    color: #4A4E69;
+	color: #4A4E69;
+	font-size: 20px;
 }
 
 .filters {
@@ -255,12 +263,26 @@ nav .material-symbols-outlined {
     color: #C9ADA7;
 }
 
-.bookmark-icon {
+.like-icon, .bookmark-icon, .chat-icon {
+    font-size: 30px;
+}
+
+.like-icon, .bookmark-icon {
     color: #C9ADA7;
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	transition: color 0.2s ease;
+}
+
+.like-icon.liked, .bookmark-icon.saved {
+	font-variation-settings: 'FILL' 1;
+	color: #C4988E;
 }
 
 .timestamp {
-    font-size: 10px;
+    font-size: 12.5px;
     color: #6E6A7C;
     margin-top: 0.5rem;
 }
