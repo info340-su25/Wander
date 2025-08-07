@@ -16,10 +16,10 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Home openMenu={() => setMenuOpen(true)} />} />
                 <Route path="/profile" element={<ProfilePage openMenu={() => setMenuOpen(true)} />} />
-                <Route path="/view-trips" element={<ViewTripsPage />} />
-                <Route path="/create-new-trip" element={<CreateNewTripPage />} />
-                <Route path="/create-log" element={<CreateNewLogPage />} />
-                <Route path="/map" element={<ViewMap />} />
+                <Route path="/view-trips" element={<ViewTripsPage openMenu={() => setMenuOpen(true)}/>} />
+                <Route path="/create-new-trip" element={<CreateNewTripPage openMenu={() => setMenuOpen(true)}/>} />
+                <Route path="/create-log" element={<CreateNewLogPage openMenu={() => setMenuOpen(true)}/>} />
+                <Route path="/map" element={<ViewMap openMenu={() => setMenuOpen(true)}/>} />
             </Routes>
 
             {menuOpen && <MenuOverlay onClose={() => setMenuOpen(false)} />}

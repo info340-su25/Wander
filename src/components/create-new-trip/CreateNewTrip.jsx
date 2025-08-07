@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {useNavigate} from 'react-router';
 import Footer from '../Footer';
+import Navigation from '../Navigation';
 
 function CreateNewTrip(props) {
     const newTripData = props.newTripData;
@@ -42,11 +43,7 @@ function CreateNewTrip(props) {
     return (
         <div>
             <header className="trip-header">
-                <nav>
-                    <ul>
-                        <li><a href="menu.html" className="btn"><span className="material-symbols-outlined">menu</span></a></li>
-                    </ul>
-                </nav>
+                <Navigation openMenu={props.openMenu}/>
             </header>
 
             <main className="trip-content">

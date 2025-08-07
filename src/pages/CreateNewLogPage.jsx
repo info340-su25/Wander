@@ -1,3 +1,4 @@
+import React from "react";
 import CreateNewLog from "../components/create-new-log/CreateNewLog";
 
 const logData = {
@@ -7,6 +8,6 @@ const logData = {
     tags: ['scenic', 'walking-friendly']
 };
 
-export default function CreateNewLogPage() {
-    return <CreateNewLog logData={logData}/>;
+export default function CreateNewLogPage({ openMenu }) {
+    return <CreateNewLog logData={logData} openMenu={openMenu}/>;
 }  

@@ -11,6 +11,6 @@ const tripsData = [
     {id: 8, place: 'Fiji', alt: "Sandy beach in Fiji", path: '/img/nicolas-weldingh-Gg2VVz2ycAc-unsplash.jpg'}
 ];
 
-export default function ViewTripsPage() {
-    return <ViewTrips tripsData={tripsData}/>;
+export default function ViewTripsPage({ openMenu }) {
+    return <ViewTrips tripsData={tripsData} openMenu={openMenu}/>;
 }

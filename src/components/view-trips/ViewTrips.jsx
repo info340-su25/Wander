@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import Footer from '../Footer';
+import Navigation from '../Navigation';
 
 function ViewTrips(props) {
     const tripsData = props.tripsData;
@@ -8,11 +9,7 @@ function ViewTrips(props) {
     return (
         <div>
             <header className="view-trips-header">
-                <nav>
-                    <ul>
-                        <li><a href="menu.html" className="btn"><span className="material-symbols-outlined">menu</span></a></li>
-                    </ul>
-                </nav>
+                <Navigation openMenu={props.openMenu}/>
             </header>
 
             <main className="view-trips-container">

@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
+import { useNavigate } from 'react-router';
 import Footer from '../Footer';
+import Navigation from '../Navigation';
 
 function CreateNewLog(props) {
     const log = props.logData;
@@ -10,8 +12,11 @@ function CreateNewLog(props) {
     const [tags, setTags] = useState(log.tags || []);
     const [file, setFile] = useState(null);
 
+    const navigate = useNavigate();
+
     const handleSubmit = (event) => {
         event.preventDefault();
+        navigate('/')
     };
 
     const handleClick = (event) => {
@@ -40,11 +45,7 @@ function CreateNewLog(props) {
     return (
         <div>
             <header className="log-header">
-                <nav>
-                <ul>
-                    <li><a href="menu.html" className="btn"><span className="material-symbols-outlined">menu</span></a></li>
-                </ul>
-                </nav>
+                <Navigation openMenu={props.openMenu}/>
             </header>
 
             <main className="log-container">

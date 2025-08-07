@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Footer from '../components/Footer';
+import Navigation from '../components/Navigation';
 
-function ViewMap() {
+function ViewMap({openMenu}) {
     const [searchTerm, setSearchTerm] = useState('');
 
     // filters stuff later
@@ -13,11 +14,7 @@ function ViewMap() {
     return (
         <div>
             <header className="view-header">
-                <nav>
-                    <ul>
-                        <li><a href="menu.html" className="btn"><span className="material-symbols-outlined">menu</span></a></li>
-                    </ul>
-                </nav>
+                <Navigation openMenu={openMenu}/>
             </header>
 
             <main className="view-container">

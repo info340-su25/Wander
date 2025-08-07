@@ -8,6 +8,6 @@ const newTripData = {
     collaborators: 'n1coleh@uw.edu'
 };
 
-export default function CreateNewTripPage() {
-    return <CreateNewTrip newTripData={newTripData}/>;
+export default function CreateNewTripPage({ openMenu }) {
+    return <CreateNewTrip newTripData={newTripData} openMenu={openMenu}/>;
 }
