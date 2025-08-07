@@ -11,7 +11,7 @@ export default function MenuOverlay({ onClose }) {
 
             <div className="menu-content">
                 <div className="menu-buttons">
-                    <a className="menu-button"><span className="material-symbols-outlined">settings</span>Settings</a>
+                <Link to="/settings" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">settings</span>Settings</Link>
                     <Link to="/places-been" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">send</span>Places been</Link>
                     <Link to="saved" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">bookmark</span>Saved</Link>
                     <Link to="/splash" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">move_item</span>Log out</Link>
