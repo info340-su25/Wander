@@ -14,6 +14,7 @@ import Splash from './pages/Splash';
 import SignInPage from './pages/SignInPage';
 import LoginPage from './pages/LoginPage';
 import SettingsPage from './pages/SettingsPage';
+import PrivacyPage from './pages/PrivacyPage';
 
 export default function App() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -34,6 +35,7 @@ export default function App() {
                 <Route path="/places-been" element={<PlacesBeenPage />}/>
                 <Route path="/saved" element={<SavedPage />}/>
                 <Route path="/settings" element={<SettingsPage openMenu={() => setMenuOpen(true)} />} />
+                <Route path="/privacy-settings" element={<PrivacyPage openMenu={() => setMenuOpen(true)} />} />
             </Routes>
 
             {menuOpen && <MenuOverlay onClose={() => setMenuOpen(false)} />}

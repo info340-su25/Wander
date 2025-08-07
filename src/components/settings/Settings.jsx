@@ -13,25 +13,25 @@ export default function Settings({ openMenu }) {
             </header>
 
             <main className="settings-body">
-                <div className="setting-option">
+                <button className="setting-option" onClick={() => navigate('/account-settings')}>
                     <span className="material-symbols-outlined icon">person</span>
                     <div className="setting-text">
                         <p className="setting-title">Your account</p>
                         <p className="setting-description">Change email, change password</p>
                     </div>
                     <span className="material-symbols-outlined arrow">chevron_right</span>
-                </div>
+                </button>
 
                 <hr className="setting-divider" />
 
-                <div className="setting-option">
+                <button className="setting-option" onClick={() => navigate('/privacy-settings')}>
                     <span className="material-symbols-outlined icon">lock</span>
                     <div className="setting-text">
                         <p className="setting-title">Privacy</p>
                         <p className="setting-description">Manage information you see and share on Wander</p>
                     </div>
                     <span className="material-symbols-outlined arrow">chevron_right</span>
-                </div>
+                </button>
             </main>
         </div>
     );

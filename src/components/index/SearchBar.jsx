@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
-
-export default function SearchBar() {
-    const [search, setSearch] = useState('');
-
+export default function SearchBar({ search, setSearch }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("Search submitted:", search);
-        // Future thing to worry about :D
     };
-    
+
     return (
         <section className="search-bar">
             <form onSubmit={handleSubmit}>
