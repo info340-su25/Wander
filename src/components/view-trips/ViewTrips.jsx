@@ -19,7 +19,7 @@ function ViewTrips(props) {
                 <div className="view-trips-content">
                     <div className="view-trips-heading-container">
                         <h1 className="view-trips-title">My Trips</h1>
-                        <h1 className="add-new-trip"><Link to="./pages/CreateNewTripPage">Add a new trip <span class="material-symbols-outlined">add</span></Link></h1>
+                        <h1 className="add-new-trip"><Link to="/create-new-trip">Add a new trip <span class="material-symbols-outlined">add</span></Link></h1>
                     </div>
                 </div>
 

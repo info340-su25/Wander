@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {useNavigate} from 'react-router';
+import Footer from '../Footer';
 
 function CreateNewTrip(props) {
     const newTripData = props.newTripData;
@@ -14,7 +15,7 @@ function CreateNewTrip(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        navigate('./pages/ViewTripsPage');
+        navigate('/view-trips');
     };
 
     const handleClick = (event) => {
