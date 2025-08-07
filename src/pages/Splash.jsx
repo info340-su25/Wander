@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 function Splash() {
     return (
@@ -9,8 +10,8 @@ function Splash() {
                 <p className="splash-subtext">Welcome to</p>
                 <h1 className="splash-title">Wander</h1>
 
-                <a href="sign-in.html" className="splash-signup-btn">Sign up</a>
-                <p className="splash-login">Already have an account? <a href="login.html">Login here</a></p>
+                <Link to="/sign-in" className="splash-signup-btn">Sign up</Link>
+                <p className="splash-login">Already have an account? <Link to="/login">Login here</Link></p>
             </div>
 
             <footer className="splash-footer">
@@ -20,3 +21,5 @@ function Splash() {
         </div>
     );
 }
+
+export default Splash;

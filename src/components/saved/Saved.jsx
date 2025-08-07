@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Footer';
 
 function Saved(props) {
     const savedData = props.savedData;

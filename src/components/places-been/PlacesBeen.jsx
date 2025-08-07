@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Footer';
 
 function PlacesBeen(props) {
     const placesBeenData = props.placesBeenData;
@@ -21,7 +22,7 @@ function PlacesBeen(props) {
             <main className="places-been-container">
                 <div className="places-been-content">
                     <div className="places-been-heading-container">
-                        <h1 class="places-been-title">Places Been</h1>
+                        <h1 className="places-been-title">Places Been</h1>
                     </div>
                 </div>
 

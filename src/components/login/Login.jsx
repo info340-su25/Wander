@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link, useNavigate } from 'react-router';
 
 function Login(props) {
     const info = props.userData;
@@ -7,8 +8,11 @@ function Login(props) {
     const [password, setPassword] = useState(info.password || '');
     const [rememberMe, setRememberMe] = useState(false);
 
+    const navigate = useNavigate();
+
     const handleSubmit = (event) => {
         event.preventDefault();
+        navigate('/');
     };
 
     const handleClick = (event) => {
@@ -20,7 +24,7 @@ function Login(props) {
         <div className="login-container">
             <div className="login-bg-rect">
                 <div className="back-arrow">
-                    <a href="splash.html"><span className="material-symbols-outlined">arrow_back</span></a>
+                    <Link to="/splash"><span className="material-symbols-outlined">arrow_back</span></Link>
                 </div>
 
                 <div className="login-content">

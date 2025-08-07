@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default function MenuOverlay({ onClose }) {
     return (
@@ -11,9 +12,9 @@ export default function MenuOverlay({ onClose }) {
             <div className="menu-content">
                 <div className="menu-buttons">
                     <a className="menu-button"><span className="material-symbols-outlined">settings</span>Settings</a>
-                    <a className="menu-button"><span className="material-symbols-outlined">send</span>Places been</a>
-                    <a className="menu-button"><span className="material-symbols-outlined">bookmark</span>Saved</a>
-                    <a href="/splash.html" className="menu-button"><span className="material-symbols-outlined">move_item</span>Log out</a>
+                    <Link to="/places-been" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">send</span>Places been</Link>
+                    <Link to="saved" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">bookmark</span>Saved</Link>
+                    <Link to="/splash" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">move_item</span>Log out</Link>
                 </div>
             </div>
 
