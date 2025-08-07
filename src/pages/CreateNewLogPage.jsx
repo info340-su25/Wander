@@ -1,3 +1,5 @@
+import CreateNewLog from "../components/create-new-log/CreateNewLog";
+
 const logData = {
     destination: 'Shanghai',
     rating: '4.5',
@@ -5,4 +7,6 @@ const logData = {
     tags: ['scenic', 'walking-friendly']
 };
 
-export default logData;
+export default function CreateNewLogPage() {
+    return <CreateNewLog logData={logData}/>;
+}  

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Routes, Route } from 'react-router'; // you're using react-router, not react-router-dom
+import { Routes, Route } from 'react-router';
 import Home from './pages/Home';
 import ProfilePage from './pages/ProfilePage';
-import ViewTrips from './pages/ViewTrips';
-import CreateNewLog from './pages/CreateNewLog';
+import ViewTrips from './components/view-trips/ViewTrips';
+import CreateNewLog from './components/create-new-log/CreateNewLog';
 import ViewMap from './pages/ViewMap';
 
 export default function App() {
@@ -14,7 +14,6 @@ export default function App() {
             <Route path="/view-trips" element={<ViewTrips />} />
             <Route path="/create-log" element={<CreateNewLog />} />
             <Route path="/map" element={<ViewMap />} />
-            {/* You can add more routes later here like /post/:id */}
         </Routes>
     );
 }

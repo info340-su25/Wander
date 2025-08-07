@@ -1,30 +1,33 @@
 import React from 'react';
-import Footer from '../components/Footer';
 
-function ViewTrips(props) {
-    const trips = props.tripsData;
-
+function PlacesBeen(props) {
+    const placesBeenData = props.placesBeenData;
     return (
         <div>
-            <header className="view-trips-header">
-                <nav>
+            <header className="places-been-header">
+                {/* COME BACK TO THIS LATER */}
+                <nav className="d-flex justify-content-between align-items-center">
+                    {/* COME BACK TO THIS LATER */}
+                    <div className="back-arrow">
+                        <a href="menu.html"><span className="material-symbols-outlined">arrow_back</span></a>
+                    </div>
+                    {/* COME BACK TO THIS LATER */}
                     <ul>
                         <li><a href="menu.html" className="btn"><span className="material-symbols-outlined">menu</span></a></li>
                     </ul>
                 </nav>
             </header>
 
-            <main className="view-trips-container">
-                <div className="view-trips-content">
-                    <div className="view-trips-heading-container">
-                        <h1 class="view-trips-title">My Trips</h1>
-                        <h1 class="add-new-trip"><a href="create-new-trip.html">Add a new trip <span class="material-symbols-outlined">add</span></a></h1>
+            <main className="places-been-container">
+                <div className="places-been-content">
+                    <div className="places-been-heading-container">
+                        <h1 class="places-been-title">Places Been</h1>
                     </div>
                 </div>
 
                 <div className="container-fluid">
                     <div className="row g-3 justify-content-center">
-                        {trips.map((trip) => (
+                        {placesBeenData.map((trip) => (
                             <div key={trip.id} className="col-6 col-md-4 col-xl-3 d-flex justify-content-center mb-3">
                                 <div className="trip-card">
                                     <img src={trip.path} alt={trip.alt} className="trip-img" />
@@ -37,9 +40,9 @@ function ViewTrips(props) {
 
             </main>
 
-            <Footer/>
+            <Footer />
         </div>
     );
 }
 
-export default ViewTrips;
+export default PlacesBeen;

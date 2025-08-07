@@ -1,3 +1,5 @@
+import Saved from "../components/saved/Saved";
+
 const savedData = [
     {id: 1, place: 'Taipei', alt: "View of Taipei 101 at night in Taipei, Taiwan", path: '/img/timo-volz-4M25kv8v7_0-unsplash.jpg'},
     {id: 2, place: 'Nice', alt: "Fountain park in Nice, France", path: '/img/nick-karvounis-2rsK_rdiDJ8-unsplash.jpg'},
@@ -6,4 +8,6 @@ const savedData = [
     {id: 5, place: 'London', alt: "View of Tower Bridge in London, England", path: '/img/charles-postiaux-Q6UehpkBSnQ-unsplash.jpg'}
 ];
 
-export default savedData;
+export default function SavedPage() {
+    return <Saved savedData={savedData} />;
+}

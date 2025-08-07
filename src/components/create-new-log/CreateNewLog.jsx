@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Footer from '../components/Footer';
+import Footer from '../Footer';
 
 function CreateNewLog(props) {
     const log = props.logData;

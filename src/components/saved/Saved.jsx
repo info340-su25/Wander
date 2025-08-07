@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Saved(props) {
-    const trips = props.savedData;
+    const savedData = props.savedData;
     return (
         <div>
             <header className="saved-header">
@@ -27,7 +27,7 @@ function Saved(props) {
 
                 <div className="container-fluid">
                     <div className="row g-3 justify-content-center">
-                        {trips.map((trip) => (
+                        {savedData.map((trip) => (
                             <div key={trip.id} className="col-6 col-md-4 col-xl-3 d-flex justify-content-center mb-3">
                                 <div className="trip-card">
                                     <img src={trip.path} alt={trip.alt} className="trip-img" />

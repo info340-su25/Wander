@@ -1,3 +1,5 @@
+import CreateNewTrip from "../components/create-new-trip/CreateNewTrip";
+
 const newTripData = {
     title: 'Rome',
     destination: 'Rome',
@@ -6,4 +8,6 @@ const newTripData = {
     collaborators: 'n1coleh@uw.edu'
 };
 
-export default newTripData;
+export default function CreateNewTripPage() {
+    return <CreateNewTrip newTripData={newTripData}/>;
+}

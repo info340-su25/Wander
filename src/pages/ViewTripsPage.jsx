@@ -1,3 +1,5 @@
+import ViewTrips from "../components/view-trips/ViewTrips";
+
 const tripsData = [
     {id: 1, place: 'Rome', alt: "Colosseum in Rome, Italy", path: '/img/david-kohler-VFRTXGw1VjU-unsplash.jpg'},
     {id: 2, place: 'Lisbon', alt: "Tram car in Lisbon, Portugal", path: '/img/aayush-gupta-ljhCEaHYWJ8-unsplash.jpg'},
@@ -9,4 +11,6 @@ const tripsData = [
     {id: 8, place: 'Fiji', alt: "Sandy beach in Fiji", path: '/img/nicolas-weldingh-Gg2VVz2ycAc-unsplash.jpg'}
 ];
 
-export default tripsData;
+export default function ViewTripsPage() {
+    return <ViewTrips tripsData={tripsData}/>;
+}

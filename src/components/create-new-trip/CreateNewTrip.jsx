@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 function CreateNewTrip(props) {
-    const newTrip = props.newTripData;
+    const newTripData = props.newTripData;
 
     const [title, setTitle] = useState(newTrip.title || '');
-    const [destination, setDestination] = useState(newTrip.destination || '');
-    const [description, setDescription] = useState(newTrip.description || '');
-    const [attractions, setAttractions] = useState(newTrip.attractions || []);
-    const [collaborators, setCollaborators] = useState(newTrip.collaborators || '');
+    const [destination, setDestination] = useState(newTripData.destination || '');
+    const [description, setDescription] = useState(newTripData.description || '');
+    const [attractions, setAttractions] = useState(newTripData.attractions || []);
+    const [collaborators, setCollaborators] = useState(newTripData.collaborators || '');
 
     const handleSubmit = (event) => {
         event.preventDefault();

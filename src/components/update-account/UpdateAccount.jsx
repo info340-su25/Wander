@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 function UpdateAccount(props) {
-    const info = props.userData;
+    const userData = props.userData;
 
-    const [email, setEmail] = useState(info.email || '');
-    const [password, setPassword] = useState(info.password || '');
+    const [email, setEmail] = useState(userData.email || '');
+    const [password, setPassword] = useState(userData.password || '');
     const [confirmPassword, setConfirmPassword] = useState('');
 
     const handleClick = (event) => {
