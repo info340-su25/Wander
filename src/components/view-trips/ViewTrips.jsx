@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import Footer from '../Footer';
 
 function ViewTrips(props) {
@@ -17,8 +18,8 @@ function ViewTrips(props) {
             <main className="view-trips-container">
                 <div className="view-trips-content">
                     <div className="view-trips-heading-container">
-                        <h1 class="view-trips-title">My Trips</h1>
-                        <h1 class="add-new-trip"><a href="create-new-trip.html">Add a new trip <span class="material-symbols-outlined">add</span></a></h1>
+                        <h1 className="view-trips-title">My Trips</h1>
+                        <h1 className="add-new-trip"><Link to="./pages/CreateNewTripPage">Add a new trip <span class="material-symbols-outlined">add</span></Link></h1>
                     </div>
                 </div>
 

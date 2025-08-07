@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router';
 
 function CreateNewTrip(props) {
     const newTripData = props.newTripData;
 
-    const [title, setTitle] = useState(newTrip.title || '');
+    const [title, setTitle] = useState(newTripData.title || '');
     const [destination, setDestination] = useState(newTripData.destination || '');
     const [description, setDescription] = useState(newTripData.description || '');
-    const [attractions, setAttractions] = useState(newTripData.attractions || []);
+    const [attractions, setAttractions] = useState(newTripData.attractions || '');
     const [collaborators, setCollaborators] = useState(newTripData.collaborators || '');
+
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        navigate('./pages/ViewTripsPage');
     };
 
     const handleClick = (event) => {

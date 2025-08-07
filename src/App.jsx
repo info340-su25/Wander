@@ -2,8 +2,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router';
 import Home from './pages/Home';
 import ProfilePage from './pages/ProfilePage';
-import ViewTrips from './components/view-trips/ViewTrips';
-import CreateNewLog from './components/create-new-log/CreateNewLog';
+import ViewTripsPage from './pages/ViewTripsPage';
+import CreateNewLogPage from './pages/CreateNewLogPage';
 import ViewMap from './pages/ViewMap';
 
 export default function App() {
@@ -11,8 +11,8 @@ export default function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/view-trips" element={<ViewTrips />} />
-            <Route path="/create-log" element={<CreateNewLog />} />
+            <Route path="/view-trips" element={<ViewTripsPage />} />
+            <Route path="/create-log" element={<CreateNewLogPage />} />
             <Route path="/map" element={<ViewMap />} />
         </Routes>
     );
