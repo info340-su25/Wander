@@ -15,7 +15,7 @@ export default function App() {
         <>
             <Routes>
                 <Route path="/" element={<Home openMenu={() => setMenuOpen(true)} />} />
-                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/profile" element={<ProfilePage openMenu={() => setMenuOpen(true)} />} />
                 <Route path="/view-trips" element={<ViewTripsPage />} />
                 <Route path="/create-new-trip" element={<CreateNewTripPage />} />
                 <Route path="/create-log" element={<CreateNewLogPage />} />

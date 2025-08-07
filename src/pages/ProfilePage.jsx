@@ -23,7 +23,7 @@ const profileData = {
     ],
 };
 
-export default function ProfilePage() {
-    return <Profile profileData={profileData} />;
+export default function ProfilePage({ openMenu }) {
+    return <Profile profileData={profileData} openMenu={openMenu} />;
 }
 
