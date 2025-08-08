@@ -8,6 +8,6 @@ const savedData = [
     {id: 5, place: 'London', alt: "View of Tower Bridge in London, England", path: '/img/charles-postiaux-Q6UehpkBSnQ-unsplash.jpg'}
 ];
 
-export default function SavedPage() {
-    return <Saved savedData={savedData} />;
+export default function SavedPage({ openMenu }) {
+    return <Saved savedData={savedData} openMenu={openMenu}/>;
 }

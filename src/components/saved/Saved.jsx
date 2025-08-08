@@ -7,16 +7,12 @@ function Saved(props) {
         <div>
             <header className="saved-header">
                 {/* COME BACK TO THIS LATER */}
-                <nav className="d-flex justify-content-between align-items-center">
-                    {/* COME BACK TO THIS LATER */}
-                    <div className="back-arrow">
-                        <a href="menu.html"><span className="material-symbols-outlined">arrow_back</span></a>
-                    </div>
-                    {/* COME BACK TO THIS LATER */}
-                    <ul>
-                        <li><a href="menu.html" className="btn"><span className="material-symbols-outlined">menu</span></a></li>
-                    </ul>
-                </nav>
+                {/* <nav className="d-flex justify-content-between align-items-center">
+                    
+                </nav> */}
+                <button className="material-symbols-outlined back-btn" onClick={() => navigate(-1)}>arrow_back</button>
+                {/* <h1 className="settings-title"></h1> */}
+                <button className="material-symbols-outlined menu-btn" onClick={props.openMenu}>menu</button>
             </header>
 
             <main className="saved-container">

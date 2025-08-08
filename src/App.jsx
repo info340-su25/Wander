@@ -31,9 +31,9 @@ export default function App() {
                 <Route path="/create-new-trip" element={<CreateNewTripPage openMenu={() => setMenuOpen(true)}/>} />
                 <Route path="/create-log" element={<CreateNewLogPage openMenu={() => setMenuOpen(true)}/>} />
                 <Route path="/map" element={<ViewMap openMenu={() => setMenuOpen(true)}/>} />
-                <Route path="/update-account" element={<UpdateAccountPage />}/>
-                <Route path="/places-been" element={<PlacesBeenPage />}/>
-                <Route path="/saved" element={<SavedPage />}/>
+                <Route path="/update-account" element={<UpdateAccountPage openMenu={() => setMenuOpen(true)}/>}/>
+                <Route path="/places-been" element={<PlacesBeenPage openMenu={() => setMenuOpen(true)}/>}/>
+                <Route path="/saved" element={<SavedPage openMenu={() => setMenuOpen(true)}/>}/>
                 <Route path="/settings" element={<SettingsPage openMenu={() => setMenuOpen(true)} />} />
                 <Route path="/privacy-settings" element={<PrivacyPage openMenu={() => setMenuOpen(true)} />} />
             </Routes>
