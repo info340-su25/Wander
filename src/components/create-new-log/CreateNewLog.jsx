@@ -64,7 +64,6 @@ function CreateNewLog(props) {
                             <div className="upload-box">
                                 <input type="file" id="file-upload" className="file-display" multiple onChange={handleFileChange} />
                                 <label htmlFor='file-upload' className="upload-box"><span className="material-symbols-outlined upload-plus">add</span></label>
-                                
                             </div>
                         </div>
 

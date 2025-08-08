@@ -297,6 +297,7 @@ nav .material-symbols-outlined {
 }
 
 .like-icon.liked, .bookmark-icon.saved {
+    /* had to use ChatGPT because we wanted the icons to looked filled but didn't know how to achieve the look */
 	font-variation-settings: 'FILL' 1;
 	color: #C9ADA7;
 }
@@ -1320,21 +1321,6 @@ main.profile-body h1 {
     margin-bottom: 0.5rem;
 }
 
-/* .edit-profile-btn {
-    color: #fff;
-    font-size: 0.5rem;
-    border-radius: 12px;
-    padding: 2px 12px;
-    border: 1px solid #C4A099;
-    background: rgba(201, 173, 167, 0.60);
-}
-
-.edit-profile-btn:hover {
-    color: #fff;
-    background: rgba(201, 173, 167, 0.40);
-    border: 1px solid #C4A099;
-} */
-
 .stats-row div {
     font-size: 0.95rem;
 }
@@ -1746,6 +1732,7 @@ main.profile-body h1 {
     background-color: #22223B;
 }
 
+/* was unsure about how to style a slider so we consulted AI for that */
 input:checked + .slider {
     background-color: #22223B;
 }
