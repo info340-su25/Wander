@@ -13,7 +13,7 @@ export default function Settings({ openMenu }) {
             </header>
 
             <main className="settings-body">
-                <button className="setting-option" onClick={() => navigate('/account-settings')}>
+                <button className="setting-option" onClick={() => navigate('/update-account')}>
                     <span className="material-symbols-outlined icon">person</span>
                     <div className="setting-text">
                         <p className="setting-title">Your account</p>

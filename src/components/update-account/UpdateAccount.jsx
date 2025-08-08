@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from '../Footer';
 
 function UpdateAccount(props) {
     const userData = props.userData;

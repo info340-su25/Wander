@@ -7,7 +7,7 @@ import CreateNewTripPage from './pages/CreateNewTripPage';
 import CreateNewLogPage from './pages/CreateNewLogPage';
 import ViewMap from './pages/ViewMap';
 import MenuOverlay from './components/menu-overlay/Menu';
-// import UpdateAccountPage from './pages/UpdateAccountPage';
+import UpdateAccountPage from './pages/UpdateAccountPage';
 import PlacesBeenPage from './pages/PlacesBeenPage';
 import SavedPage from './pages/SavedPage';
 import Splash from './pages/Splash';
@@ -31,7 +31,7 @@ export default function App() {
                 <Route path="/create-new-trip" element={<CreateNewTripPage openMenu={() => setMenuOpen(true)}/>} />
                 <Route path="/create-log" element={<CreateNewLogPage openMenu={() => setMenuOpen(true)}/>} />
                 <Route path="/map" element={<ViewMap openMenu={() => setMenuOpen(true)}/>} />
-                {/* <Route path="/update-account" element={<UpdateAccountPage />}/> */}
+                <Route path="/update-account" element={<UpdateAccountPage />}/>
                 <Route path="/places-been" element={<PlacesBeenPage />}/>
                 <Route path="/saved" element={<SavedPage />}/>
                 <Route path="/settings" element={<SettingsPage openMenu={() => setMenuOpen(true)} />} />
