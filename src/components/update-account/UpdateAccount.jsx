@@ -1,33 +1,25 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 import Footer from '../Footer';
 
 function UpdateAccount(props) {
-    const userData = props.userData;
+    const { userData, openMenu } = props;
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState(userData.email || '');
     const [password, setPassword] = useState(userData.password || '');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleClick = (event) => {
-        event.preventDefault();
-        handleSubmit(event);
-    };
+    const handleSubmit = () => {};
+    const handleEmailUpdate = () => {};
+    const handlePasswordUpdate = () => {};
 
     return (
         <div>
-            <header className="update-account-header">
-                {/* COME BACK TO THIS LATER */}
-                <nav className="d-flex justify-content-between align-items-center">
-                    {/* COME BACK TO THIS LATER */}
-                    <div className="back-arrow">
-                        <a href="menu.html"><span className="material-symbols-outlined">arrow_back</span></a>
-                    </div>
-                    {/* COME BACK TO THIS LATER */}
-                    <h1 className="update-account-title">Update Account</h1>
-                    <ul>
-                        <li><a href="menu.html" className="btn"><span className="material-symbols-outlined">menu</span></a></li>
-                    </ul>
-                </nav>
+            <header className="settings-header">
+                <button className="material-symbols-outlined back-btn" onClick={() => navigate(-1)}>arrow_back</button>
+                <h1 className="settings-title">Update Account</h1>
+                <button className="material-symbols-outlined menu-btn" onClick={openMenu}>menu</button>
             </header>
 
             <main className="update-account-content">

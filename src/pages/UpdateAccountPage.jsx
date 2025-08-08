@@ -5,6 +5,6 @@ const userData = {
     password: 'wander123'
 };
 
-export default function UpdateAccountPage() {
-    return <UpdateAccount userData={userData} />
+export default function UpdateAccountPage({ openMenu }) {
+    return <UpdateAccount userData={userData} openMenu={openMenu} />
 }
