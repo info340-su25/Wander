@@ -26,19 +26,19 @@ function UpdateAccount(props) {
 
                 <div className="account-form">
                     <label className="form-label">Change Email</label>
-                    <input type="email" placeholder="Enter an email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="email" className="email-input" placeholder="Enter an email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     <button className="update-btn" onClick={handleEmailUpdate}>Update</button>
                 </div>
 
                 <div className="account-form">
                     <label className="form-label">Change Password</label>
-                    <input type="password" placeholder="Enter a password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" className="password-input" placeholder="Enter a password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
 
 
                 <div className="account-form">
                     <label className="form-label">Confirm Password</label>
-                    <input type="password" placeholder="Confirm password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                    <input type="password" className="confirm-input" placeholder="Confirm password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                     <button className="update-btn" onClick={handlePasswordUpdate}>Update</button>
                 </div>
             </main>

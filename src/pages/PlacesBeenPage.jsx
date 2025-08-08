@@ -5,6 +5,6 @@ const placesBeenData = [
     {id: 2, place: 'Shanghai', alt: "The Bund in Shanghai, China", path: '/img/li-yang-5h_dMuX_7RE-unsplash.jpg'}
 ];
 
-export default function PlacesBeenPage() {
-    return <PlacesBeen placesBeenData={placesBeenData} />;
+export default function PlacesBeenPage({ openMenu }) {
+    return <PlacesBeen placesBeenData={placesBeenData} openMenu={openMenu}/>;
 }

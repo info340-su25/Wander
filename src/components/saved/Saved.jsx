@@ -1,17 +1,14 @@
 import React from 'react';
 import Footer from '../Footer';
+import { useNavigate } from 'react-router';
 
 function Saved(props) {
+    const navigate = useNavigate();
     const savedData = props.savedData;
     return (
         <div>
             <header className="saved-header">
-                {/* COME BACK TO THIS LATER */}
-                {/* <nav className="d-flex justify-content-between align-items-center">
-                    
-                </nav> */}
                 <button className="material-symbols-outlined back-btn" onClick={() => navigate(-1)}>arrow_back</button>
-                {/* <h1 className="settings-title"></h1> */}
                 <button className="material-symbols-outlined menu-btn" onClick={props.openMenu}>menu</button>
             </header>
 

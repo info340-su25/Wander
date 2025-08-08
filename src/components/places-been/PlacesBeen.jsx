@@ -1,22 +1,15 @@
 import React from 'react';
 import Footer from '../Footer';
+import { useNavigate } from 'react-router';
 
 function PlacesBeen(props) {
+    const navigate = useNavigate();
     const placesBeenData = props.placesBeenData;
     return (
         <div>
             <header className="places-been-header">
-                {/* COME BACK TO THIS LATER */}
-                <nav className="d-flex justify-content-between align-items-center">
-                    {/* COME BACK TO THIS LATER */}
-                    <div className="back-arrow">
-                        <a href="menu.html"><span className="material-symbols-outlined">arrow_back</span></a>
-                    </div>
-                    {/* COME BACK TO THIS LATER */}
-                    <ul>
-                        <li><a href="menu.html" className="btn"><span className="material-symbols-outlined">menu</span></a></li>
-                    </ul>
-                </nav>
+                <button className="material-symbols-outlined back-btn" onClick={() => navigate(-1)}>arrow_back</button>
+                <button className="material-symbols-outlined menu-btn" onClick={props.openMenu}>menu</button>
             </header>
 
             <main className="places-been-container">

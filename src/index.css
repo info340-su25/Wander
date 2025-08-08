@@ -333,7 +333,7 @@ nav .material-symbols-outlined {
 .view-bottom-nav .material-symbols-outlined, .trip-bottom-nav .material-symbols-outlined,
 .view-trips-bottom-nav .material-symbols-outlined {
     font-size: 24px;
-    color: #C9ADA7;
+    color: #B1887F;
     transition: color 0.3s ease;
 }
 
@@ -1441,6 +1441,7 @@ main.profile-body h1 {
 }
 
 .trip-card {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     aspect-ratio: 1 / 1;
     width: 100%;
     max-width: 400px;
@@ -1473,7 +1474,7 @@ main.profile-body h1 {
     font-weight: 600;
     padding: 1rem;
     background: #C9ADA7;
-    color: #F2E9E4;
+    color: #FFF9F6;
     margin: 0;
 }
 
@@ -1622,6 +1623,127 @@ main.profile-body h1 {
     background-color: white;
     transition: 0.4s;
     border-radius: 50%;
+}
+
+/* ------------ saved ------------ */
+
+.saved-container {
+    background-color: #F2E9E4;
+    max-width: 3500px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-bottom: 80px;
+}
+
+
+.saved-heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.saved-content {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    margin-bottom: 30px;
+}
+
+.saved-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #4A4E69;
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+/* ------------ places been ------------ */
+
+.places-been-container {
+    background-color: #F2E9E4;
+    max-width: 3500px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-bottom: 80px;
+}
+
+
+.places-been-heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.places-been-content {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    margin-bottom: 30px;
+}
+
+.places-been-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #4A4E69;
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+/* ------------ update account ------------ */
+
+.update-account-content {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    margin-bottom: 30px;
+    padding: 50px;
+}
+
+.account-form {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4A4E69;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.email-input, .password-input,
+.confirm-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(201, 173, 167, 0.32);
+    font-size: 12px;
+    color: #92746D;
+    border: 1px solid #92746D;
+}
+
+.email-input::placeholder, .password-input::placeholder,
+.confirm-input::placeholder {
+    color: #92746D;
+}
+
+.update-btn {
+    background-color: #4A4E69;
+    color: #F2E9E4;
+    text-decoration: none;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    width: fit-content;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    transition: background-color 0.2s;
+}
+
+.update-btn:hover {
+    background-color: #22223B;
 }
 
 input:checked + .slider {
