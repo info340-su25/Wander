@@ -5,6 +5,13 @@ import { useNavigate } from 'react-router';
 function PlacesBeen(props) {
     const navigate = useNavigate();
     const placesBeenData = props.placesBeenData;
+    const mappingElement = placesBeenData.map((trip) => (
+                            <div key={trip.id} className="col-6 col-md-4 col-xl-3 d-flex justify-content-center mb-3">
+                                <div className="trip-card">
+                                    <img src={trip.path} alt={trip.alt} className="trip-img" />
+                                    <h2 className="trip-label">{trip.place}</h2>
+                                </div>
+                            </div>));
     return (
         <div>
             <header className="places-been-header">
@@ -21,14 +28,7 @@ function PlacesBeen(props) {
 
                 <div className="container-fluid">
                     <div className="row g-3 justify-content-center">
-                        {placesBeenData.map((trip) => (
-                            <div key={trip.id} className="col-6 col-md-4 col-xl-3 d-flex justify-content-center mb-3">
-                                <div className="trip-card">
-                                    <img src={trip.path} alt={trip.alt} className="trip-img" />
-                                    <h2 className="trip-label">{trip.place}</h2>
-                                </div>
-                            </div>
-                        ))}
+                        {mappingElement}
                     </div>
                 </div>
 
