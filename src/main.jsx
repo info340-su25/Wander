@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router';
 import App from './App.jsx';
+import 'leaflet/dist/leaflet.css';
 import './index.css'
 
 // Import the functions you need from the SDKs you need

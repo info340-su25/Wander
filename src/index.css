@@ -1113,14 +1113,24 @@ style it the way we wanted. */
 }
 
 .map-container {
-    flex: 1;
+    height: 60vh;    
+    min-height: 320px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 16px;
+    overflow: hidden; 
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
-.view-map-img {
+/* .leaflet-container {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+} */
+
+/* .view-map-img {
     width: 100%; 
     height: 100%; 
     display: block;
-}
+} */
 
 /* ------------ create new trip page ------------ */
 .trip-container {
