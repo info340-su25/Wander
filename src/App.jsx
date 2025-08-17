@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router';
+import { Routes, Route, Navigate } from 'react-router';
 import Home from './pages/Home';
 import ProfilePage from './pages/ProfilePage';
 import ViewTripsPage from './pages/ViewTripsPage';
