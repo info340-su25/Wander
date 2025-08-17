@@ -1,12 +1,16 @@
-# React + Vite
+# Wander: A Travel Life-Logging Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Our app is designed for everyone, from solo travelers to families organizing group vacations. This platform will help users plan trips and discover destinations through life-vlogging by sharing travel experiences through pictures. We aim to enrich travel experiences by highlighting a wide variety of destinations and attractions people have gone to. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Experience Logging:**  
+  Users can log places they've visited, rate destinations, upload photos, write descriptions, and add tags for enhanced filtering.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Personalized Trip Lists:**  
+  Create custom trip lists and invite others to contribute. People can add destinations they would like to go to, and collaborators can add information, making it easy to organize group travel. 
+
+- **Community Discovery & Social Features:**  
+  View and filter public trip lists, discover new destinations through community insights, and engage with comments on reviews for a more social and interactive travel experience.
