@@ -34,6 +34,30 @@ export default function Filters({ selectedTag, setSelectedTag, showTrending, set
 		trendingBtnClass += " dark-blue-btn";
 	}
 
+	let tagButtons = null;
+	if (showTags) {
+		tagButtons = (
+			<div className="tag-scroll-container">
+				{allTags.map((tag) => {
+					let className = "filter-btn dark-pink-btn";
+					if (selectedTag === tag) {
+						className += " active";
+					}
+
+					return (
+						<button
+							key={tag}
+							className={className}
+							onClick={() => handleTagClick(tag)}
+						>
+							{tag}
+						</button>
+					);
+				})}
+			</div>
+		);
+	}
+
 	return (
 		<section className="filters">
 			<button className={trendingBtnClass} onClick={toggleTrending}>
@@ -55,26 +79,7 @@ export default function Filters({ selectedTag, setSelectedTag, showTrending, set
 				</button>
 			)}
 
-			{showTags && (
-				<div className="tag-scroll-container">
-					{allTags.map((tag) => {
-						let className = "filter-btn dark-pink-btn";
-						if (selectedTag === tag) {
-							className += " active";
-						}
-
-						return (
-							<button
-								key={tag}
-								className={className}
-								onClick={() => handleTagClick(tag)}
-							>
-								{tag}
-							</button>
-						);
-					})}
-				</div>
-			)}
+			{tagButtons}
 		</section>
 	);
 }

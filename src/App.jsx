@@ -36,6 +36,7 @@ export default function App() {
                 <Route path="/saved" element={<SavedPage openMenu={() => setMenuOpen(true)}/>}/>
                 <Route path="/settings" element={<SettingsPage openMenu={() => setMenuOpen(true)} />} />
                 <Route path="/privacy-settings" element={<PrivacyPage openMenu={() => setMenuOpen(true)} />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
 
             {menuOpen && <MenuOverlay onClose={() => setMenuOpen(false)} />}

@@ -26,6 +26,14 @@ export default function DiscoveryCard(props) {
 	const handleOpenComments = () => {
 		setShowComments(true);
 	};
+
+	const imageElements = images.map((img, idx) => (
+		<img key={idx} src={img.src} alt={img.alt} />
+	));
+
+	const tagElements = tags.map((tag, idx) => (
+		<span key={idx} className={'tag ' + tag.className}>{tag.label}</span>
+	));
 	
 	return (
 		<div className="col-12 col-md-6 col-xl-4 mb-4">
@@ -43,15 +51,11 @@ export default function DiscoveryCard(props) {
 
 				<div className="card-body">
 					<div className="card-images">
-						{images.map((img, idx) => (
-							<img key={idx} src={img.src} alt={img.alt} />
-						))}
+						{imageElements}
 					</div>
 					<p className="card-text">{text}</p>
 					<div className="tags">
-						{tags.map((tag, idx) => (
-							<span key={idx} className={'tag ' + tag.className}>{tag.label}</span>
-						))}
+						{tagElements}
 					</div>
 				</div>
 
