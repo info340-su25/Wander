@@ -1,9 +1,14 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 
-export default function MenuOverlay({ onClose }) {
+export default function MenuOverlay({ onClose, isOpen }) {
+    let menuClassName = 'overlay-menu';
+    if (isOpen) {
+        menuClassName += ' open';
+    }
+
     return (
-        <div className="overlay-menu">
+        <div className={menuClassName}>
             <div className="menu-header">
                 <h2 className="menu-title">Menu</h2>
                 <button className="material-symbols-outlined close-btn" onClick={onClose}>close</button>
@@ -11,7 +16,7 @@ export default function MenuOverlay({ onClose }) {
 
             <div className="menu-content">
                 <div className="menu-buttons">
-                <Link to="/settings" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">settings</span>Settings</Link>
+                    <Link to="/settings" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">settings</span>Settings</Link>
                     <Link to="/places-been" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">send</span>Places been</Link>
                     <Link to="saved" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">bookmark</span>Saved</Link>
                     <Link to="/splash" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">move_item</span>Log out</Link>

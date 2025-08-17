@@ -486,6 +486,12 @@ nav .material-symbols-outlined {
     background: #F2DFD5;
     box-shadow: -5px 0px 10px 0px rgba(196, 160, 153, 0.50);
     z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.overlay-menu.open {
+    transform: translateX(0%);
 }
 
 .menu-header {

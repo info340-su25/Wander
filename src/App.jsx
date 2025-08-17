@@ -39,7 +39,7 @@ export default function App() {
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
 
-            {menuOpen && <MenuOverlay onClose={() => setMenuOpen(false)} />}
+            <MenuOverlay isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
         </>
     );
 }
