@@ -2,7 +2,23 @@ import React, { useState } from 'react';
 import CommentOverlay from '../comments/CommentOverlay';
 
 export default function DiscoveryCard(props) {
-	const { userImg, userName, place, location, rating, images, text, tags, timestamp, likes, liked, saved, onLike, onSave } = props;
+	const {
+		userImg,
+		userName,
+		place,
+		location,
+		rating,
+		images = [],
+		text,
+		tags = [],
+		timestamp,
+		likes,
+		liked,
+		saved,
+		onLike,
+		onSave
+	} = props;
+	
 	const [showComments, setShowComments] = useState(false);
 
 	const dummyComments = [

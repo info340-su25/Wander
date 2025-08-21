@@ -16,6 +16,8 @@ import SignInPage from './pages/SignInPage';
 import LoginPage from './pages/LoginPage';
 import SettingsPage from './pages/SettingsPage';
 import PrivacyPage from './pages/PrivacyPage';
+import { ref, push } from 'firebase/database';
+import { db } from './main';
 
 export default function App() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -27,17 +29,13 @@ export default function App() {
             userImg: "/img/hanna_pan.jpg",
             userName: "hannapan",
             place: log.destination,
-            location: "User entered", // fix
+            location: "User entered", // Update this if you collect location
             rating: `${log.rating}/5`,
-            
-            // fix — this isn't working
             images: log.file ? log.file.map((f, i) => ({
                 src: URL.createObjectURL(f),
                 alt: `Uploaded image ${i + 1}`
             })) : [],
             text: log.comments,
-
-            // fix
             tags: log.tags.map((tag) => ({
                 label: tag.replace(/-/g, ' '),
                 className: tag
@@ -47,13 +45,24 @@ export default function App() {
             liked: false,
             saved: false
         };
+
         setCards((prevLogs) => [newCard, ...prevLogs]);
+    
+        const cardsRef = ref(db, 'cards');
+        push(cardsRef, newCard)
+            .then(() => {
+                console.log("New card added to Firebase!");
+            })
+            .catch((error) => {
+                console.error("Error adding card to Firebase:", error);
+            });
     };
+    
 
     return (
         <>
             <Routes>
-                <Route path="/" element={<Home openMenu={() => setMenuOpen(true)} cards={cards} setCards={setCards}/>} />
+                <Route path="/" element={<Home openMenu={() => setMenuOpen(true)} />}/>
                 <Route path="/splash" element={<Splash />}/>
                 <Route path="/sign-in" element={<SignInPage />}/>
                 <Route path="/login" element={<LoginPage />}/>

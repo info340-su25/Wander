@@ -1,55 +1,81 @@
-import React, { useState } from 'react'
-import viteLogo from '/vite.svg'
+import React, { useState, useEffect } from 'react'; 
 import Header from '../components/index/Header';
 import SearchBar from '../components/index/SearchBar';
 import Filters from '../components/index/Filters';
 import DiscoveryFeed from '../components/index/DiscoveryFeed';
 import Footer from '../components/Footer';
-import fullCardData from '../components/index/cardData';
+import { ref, onValue, update } from 'firebase/database';
+import { db } from '../main';
 
-export default function Home({ openMenu, cards, setCards }) {
-	// const [cards, setCards] = useState(fullCardData);
+export default function Home({ openMenu }) {
+	const [cards, setCards] = useState([]);
 	const [searchTerm, setSearchTerm] = useState('');
 	const [selectedTag, setSelectedTag] = useState(null);
 	const [showTrending, setShowTrending] = useState(false);
 
+	useEffect(() => {
+		const cardsRef = ref(db, 'cards');
+		onValue(cardsRef, (snapshot) => {
+			const data = snapshot.val();
+			if (data) {
+				const loadedCards = Object.entries(data).map(([key, card]) => ({
+					...card,
+					fbKey: key
+				}));
+	
+				loadedCards.sort((a, b) => b.id - a.id);
+				setCards(loadedCards);
+			}
+		});
+	}, []);
+	
 	function toggleLike(id) {
 		const updated = [];
-
+	
 		for (const card of cards) {
 			if (card.id === id) {
 				const updatedCard = { ...card };
-				if (updatedCard.liked) {
-					updatedCard.liked = false;
-					updatedCard.likes -= 1;
-				} else {
-					updatedCard.liked = true;
-					updatedCard.likes += 1;
-				}
+				updatedCard.liked = !updatedCard.liked;
+				updatedCard.likes += updatedCard.liked ? 1 : -1;
+	
+				const cardRef = ref(db, `cards/${card.fbKey}`);
+				update(cardRef, {
+					liked: updatedCard.liked,
+					likes: updatedCard.likes
+				});
+	
 				updated.push(updatedCard);
 			} else {
 				updated.push(card);
 			}
 		}
-
+	
 		setCards(updated);
 	}
+	
 
 	function toggleSave(id) {
 		const updated = [];
-
+	
 		for (const card of cards) {
 			if (card.id === id) {
 				const updatedCard = { ...card };
 				updatedCard.saved = !updatedCard.saved;
+	
+				const cardRef = ref(db, `cards/${card.fbKey}`);
+				update(cardRef, {
+					saved: updatedCard.saved
+				});
+	
 				updated.push(updatedCard);
 			} else {
 				updated.push(card);
 			}
 		}
-
+	
 		setCards(updated);
 	}
+	
 
 	// Filtering logic
 	const filteredCards = [];
