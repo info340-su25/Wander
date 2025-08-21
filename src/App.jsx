@@ -4,7 +4,9 @@ import fullCardData from './components/index/cardData';
 import Home from './pages/Home';
 import ProfilePage from './pages/ProfilePage';
 import ViewTripsPage from './pages/ViewTripsPage';
+import tripsData from './components/view-trips/viewTripData';
 import CreateNewTripPage from './pages/CreateNewTripPage';
+import newTripData from './components/create-new-trip/tripData';
 import CreateNewLogPage from './pages/CreateNewLogPage';
 import ViewMap from './pages/ViewMap';
 import MenuOverlay from './components/menu-overlay/Menu';
@@ -22,39 +24,79 @@ import { db } from './main';
 export default function App() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [cards, setCards] = useState(fullCardData);
+    const[trips, setTrips] = useState(tripsData);
+    const [tripId, setTripId] = useState(trips.length + 1);
 
     const addCard = (log) => {
-        const newCard = {
-            id: Date.now(),
-            userImg: "/img/hanna_pan.jpg",
-            userName: "hannapan",
-            place: log.destination,
-            location: "User entered", // Update this if you collect location
-            rating: `${log.rating}/5`,
-            images: log.file ? log.file.map((f, i) => ({
-                src: URL.createObjectURL(f),
-                alt: `Uploaded image ${i + 1}`
-            })) : [],
-            text: log.comments,
-            tags: log.tags.map((tag) => ({
-                label: tag.replace(/-/g, ' '),
-                className: tag
-            })),
-            timestamp: "Just now",
-            likes: 0,
-            liked: false,
-            saved: false
+        const destination = encodeURIComponent(log.destination);
+        const url = `https://nominatim.openstreetmap.org/search?format=json&q=${destination}`;
+
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+                const addressParts = data.length > 0 ? data[0].display_name.split(',') : [];
+                const trimmedParts = addressParts.slice(-3).map(part => part.trim());
+                const attractionLocation = `${trimmedParts[0]}, ${trimmedParts[2]}`;
+
+                const newCard = {
+                    id: Date.now(),
+                    userImg: "/img/hanna_pan.jpg",
+                    userName: "Hanna",
+                    place: log.destination,
+                    location: attractionLocation,
+                    rating: `${log.rating}/5`,
+                    images: Array.isArray(log.file) && log.file.length > 0
+                        ? log.file.map((f, i) => ({
+                            src: URL.createObjectURL(f),
+                            alt: f.name || `Uploaded image ${i + 1}`
+                        }))
+                        : [],
+                    text: log.comments,
+                    tags: log.tags.map((tag) => ({
+                        label: tag.replace(/-/g, ' '),
+                        className: tag
+                    })),
+                    timestamp: "Just now",
+                    likes: 0,
+                    liked: false,
+                    saved: false
+                };
+
+                setCards((prevLogs) => [newCard, ...prevLogs]);
+
+      
+                const cardsRef = ref(db, 'cards');
+                push(cardsRef, newCard)
+                    .then(() => {
+                        console.log("New card added to Firebase!");
+                    })
+                    .catch((error) => {
+                        console.error("Error adding card to Firebase:", error);
+                    });
+            });
+    };
+
+    const addTrip = (trip) => {
+        const newTrip = {
+            id: tripId,
+            place: trip.destination,
+            alt: trip.file ? trip.file.name : `Trip to ${trip.destination}`,
+            path: trip.file ? URL.createObjectURL(trip.file) : "/img/default-trip.jpg",
+            description: trip.description,
+            attractions: trip.attractions,
+            collaborators: trip.collaborators
         };
 
-        setCards((prevLogs) => [newCard, ...prevLogs]);
-    
-        const cardsRef = ref(db, 'cards');
-        push(cardsRef, newCard)
+        setTrips((prevTrips) => [newTrip, ...prevTrips]);
+        setTripId(tripId + 1);
+
+        const tripsRef = ref(db, 'trips');
+        push(tripsRef, newTrip)
             .then(() => {
-                console.log("New card added to Firebase!");
+                console.log("New trip added to Firebase!");
             })
             .catch((error) => {
-                console.error("Error adding card to Firebase:", error);
+                console.error("Error adding trip to Firebase:", error);
             });
     };
     
@@ -67,8 +109,8 @@ export default function App() {
                 <Route path="/sign-in" element={<SignInPage />}/>
                 <Route path="/login" element={<LoginPage />}/>
                 <Route path="/profile" element={<ProfilePage openMenu={() => setMenuOpen(true)} />} />
-                <Route path="/view-trips" element={<ViewTripsPage openMenu={() => setMenuOpen(true)}/>} />
-                <Route path="/create-new-trip" element={<CreateNewTripPage openMenu={() => setMenuOpen(true)}/>} />
+                <Route path="/view-trips" element={<ViewTripsPage openMenu={() => setMenuOpen(true)} trips={trips}/>} />
+                <Route path="/create-new-trip" element={<CreateNewTripPage openMenu={() => setMenuOpen(true)} addTrip={addTrip}/>} />
                 <Route path="/create-log" element={<CreateNewLogPage openMenu={() => setMenuOpen(true)} addCard={addCard}/>} />
                 <Route path="/map" element={<ViewMap openMenu={() => setMenuOpen(true)}/>} />
                 <Route path="/update-account" element={<UpdateAccountPage openMenu={() => setMenuOpen(true)} />} />

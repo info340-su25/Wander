@@ -8,6 +8,7 @@ function CreateNewTrip(props) {
 
     const [title, setTitle] = useState(newTripData.title || '');
     const [destination, setDestination] = useState(newTripData.destination || '');
+    const [file, setFile] = useState(null);
     const [description, setDescription] = useState(newTripData.description || '');
     const [attractions, setAttractions] = useState(newTripData.attractions || '');
     const [collaborators, setCollaborators] = useState(newTripData.collaborators || '');
@@ -16,6 +17,16 @@ function CreateNewTrip(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        const trip = {
+            title,
+            destination,
+            description,
+            attractions,
+            collaborators,
+            file
+        };
+
+        props.addTrip(trip);
         navigate('/view-trips');
     };
 
@@ -29,6 +40,10 @@ function CreateNewTrip(props) {
     };
     const handleDestinationChange = (event) => {
         setDestination(event.target.value)
+    };
+    const handleFileChange = (event) => {
+        const image = event.target.files && event.target.files[0] ? event.target.files[0] : null;
++       setFile(image);
     };
     const handleDescriptionChange = (event) => {
         setDescription(event.target.value)
@@ -61,6 +76,13 @@ function CreateNewTrip(props) {
                         <input type="text" className="search-input" placeholder="Search" value={destination} onChange={handleDestinationChange}/>
                     </div>
 
+                    <div className="trip-form">
+                        <label htmlFor="attachments" className="form-label">Upload Attachments</label>
+                        <div className="upload-box">
+                            <input type="file" id="file-upload" className="file-display" accept="image/*" onChange={handleFileChange} />
+                            <label htmlFor='file-upload' className="upload-box"><span className="material-symbols-outlined upload-plus">add</span></label>
+                        </div>
+                    </div>
 
                     <div className="trip-form">
                         <label htmlFor="description" className="form-label">Description</label>
