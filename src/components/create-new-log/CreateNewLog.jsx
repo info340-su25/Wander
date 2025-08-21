@@ -16,6 +16,15 @@ function CreateNewLog(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        const newLog = {
+            destination,
+            rating,
+            comments,
+            tags,
+            file
+        };
+
+        props.addCard(newLog);
         navigate('/')
     };
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router';
+import fullCardData from './components/index/cardData';
 import Home from './pages/Home';
 import ProfilePage from './pages/ProfilePage';
 import ViewTripsPage from './pages/ViewTripsPage';
@@ -18,18 +19,48 @@ import PrivacyPage from './pages/PrivacyPage';
 
 export default function App() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [cards, setCards] = useState(fullCardData);
+
+    const addCard = (log) => {
+        const newCard = {
+            id: Date.now(),
+            userImg: "/img/hanna_pan.jpg",
+            userName: "hannapan",
+            place: log.destination,
+            location: "User entered", // fix
+            rating: `${log.rating}/5`,
+            
+            // fix — this isn't working
+            images: log.file ? log.file.map((f, i) => ({
+                src: URL.createObjectURL(f),
+                alt: `Uploaded image ${i + 1}`
+            })) : [],
+            text: log.comments,
+
+            // fix
+            tags: log.tags.map((tag) => ({
+                label: tag.replace(/-/g, ' '),
+                className: tag
+            })),
+            timestamp: "Just now",
+            likes: 0,
+            liked: false,
+            saved: false
+        };
+        setCards((prevLogs) => [newCard, ...prevLogs]);
+    };
 
     return (
         <>
             <Routes>
-                <Route path="/" element={<Home openMenu={() => setMenuOpen(true)} />} />
+                <Route path="/" element={<Home openMenu={() => setMenuOpen(true)} cards={cards} setCards={setCards}/>} />
                 <Route path="/splash" element={<Splash />}/>
                 <Route path="/sign-in" element={<SignInPage />}/>
                 <Route path="/login" element={<LoginPage />}/>
                 <Route path="/profile" element={<ProfilePage openMenu={() => setMenuOpen(true)} />} />
                 <Route path="/view-trips" element={<ViewTripsPage openMenu={() => setMenuOpen(true)}/>} />
                 <Route path="/create-new-trip" element={<CreateNewTripPage openMenu={() => setMenuOpen(true)}/>} />
-                <Route path="/create-log" element={<CreateNewLogPage openMenu={() => setMenuOpen(true)}/>} />
+                <Route path="/create-log" element={<CreateNewLogPage openMenu={() => setMenuOpen(true)} addCard={addCard}/>} />
                 <Route path="/map" element={<ViewMap openMenu={() => setMenuOpen(true)}/>} />
                 <Route path="/update-account" element={<UpdateAccountPage openMenu={() => setMenuOpen(true)} />} />
                 <Route path="/places-been" element={<PlacesBeenPage openMenu={() => setMenuOpen(true)}/>}/>

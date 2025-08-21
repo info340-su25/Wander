@@ -8,6 +8,6 @@ const logData = {
     tags: ['scenic', 'walking-friendly']
 };
 
-export default function CreateNewLogPage({ openMenu }) {
-    return <CreateNewLog logData={logData} openMenu={openMenu}/>;
+export default function CreateNewLogPage({ openMenu, addCard }) {
+    return <CreateNewLog logData={logData} openMenu={openMenu} addCard={addCard}/>;
 }  

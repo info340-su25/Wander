@@ -7,8 +7,8 @@ import DiscoveryFeed from '../components/index/DiscoveryFeed';
 import Footer from '../components/Footer';
 import fullCardData from '../components/index/cardData';
 
-export default function Home({ openMenu }) {
-	const [cards, setCards] = useState(fullCardData);
+export default function Home({ openMenu, cards, setCards }) {
+	// const [cards, setCards] = useState(fullCardData);
 	const [searchTerm, setSearchTerm] = useState('');
 	const [selectedTag, setSelectedTag] = useState(null);
 	const [showTrending, setShowTrending] = useState(false);
