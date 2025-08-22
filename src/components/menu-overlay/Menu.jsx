@@ -10,6 +10,7 @@ export default function MenuOverlay({ onClose, isOpen }) {
 
     const navigate = useNavigate();
     const handleSignOut = (event) => {
+        onClose();
         const auth = getAuth();
         signOut(auth);
         navigate('/splash');
