@@ -1,13 +1,33 @@
+import React, { useEffect, useState } from 'react';
 import Saved from "../components/saved/Saved";
+import { db } from '../main';
+import { ref, onValue } from 'firebase/database';
+import savedData from '../components/saved/savedData';
 
-const savedData = [
-    {id: 1, place: 'Taipei', alt: "View of Taipei 101 at night in Taipei, Taiwan", path: '/img/timo-volz-4M25kv8v7_0-unsplash.jpg'},
-    {id: 2, place: 'Nice', alt: "Fountain park in Nice, France", path: '/img/nick-karvounis-2rsK_rdiDJ8-unsplash.jpg'},
-    {id: 3, place: 'Lisbon', alt: "Tram car in Lisbon, Portugal", path: '/img/aayush-gupta-ljhCEaHYWJ8-unsplash.jpg'},
-    {id: 4, place: 'Cannes', alt: "Rooftop view of Cannes port in Cannes, France", path: '/img/jim-thirion-5wSTD4OwPFo-unsplash.jpg'},
-    {id: 5, place: 'London', alt: "View of Tower Bridge in London, England", path: '/img/charles-postiaux-Q6UehpkBSnQ-unsplash.jpg'}
-];
 
 export default function SavedPage({ openMenu }) {
-    return <Saved savedData={savedData} openMenu={openMenu}/>;
+    const [combinedSavedCards, setCombinedSavedCards] = useState(savedData);
+
+    useEffect(() => {
+        const cardRef = ref(db, 'cards');
+        onValue(cardRef, (snapshot) => {
+            const data = snapshot.val();
+            if (data) {
+                const loadedCards = Object.entries(data).map(([key, card]) => ({
+                    ...card,
+                    fbKey: key
+                }));
+
+                const saved = loadedCards.filter(card => card.saved === true);
+
+                const filtered = saved.filter(
+                    (card) => !savedData.some((s) => s.place === card.place)
+                );
+
+                setCombinedSavedCards([...filtered, ...savedData]);
+            }
+        });
+    }, []);
+
+    return <Saved savedData={combinedSavedCards} openMenu={openMenu}/>;
 }
