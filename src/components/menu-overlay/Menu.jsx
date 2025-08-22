@@ -9,7 +9,7 @@ export default function MenuOverlay({ onClose, isOpen }) {
     }
 
     const navigate = useNavigate();
-    const handleSignOut = (event) => {
+    const handleSignOut = () => {
         onClose();
         const auth = getAuth();
         signOut(auth);
