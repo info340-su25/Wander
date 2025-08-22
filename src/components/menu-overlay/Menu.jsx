@@ -1,10 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { getAuth, signOut } from 'firebase/auth';
 
 export default function MenuOverlay({ onClose, isOpen }) {
     let menuClassName = 'overlay-menu';
     if (isOpen) {
         menuClassName += ' open';
+    }
+
+    const navigate = useNavigate();
+    const handleSignOut = (event) => {
+        const auth = getAuth();
+        signOut(auth);
+        navigate('/splash');
     }
 
     return (
@@ -19,7 +27,7 @@ export default function MenuOverlay({ onClose, isOpen }) {
                     <Link to="/settings" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">settings</span>Settings</Link>
                     <Link to="/places-been" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">send</span>Places been</Link>
                     <Link to="saved" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">bookmark</span>Saved</Link>
-                    <Link to="/splash" className="menu-button" onClick={onClose}><span className="material-symbols-outlined">move_item</span>Log out</Link>
+                    <button className="menu-button" onClick={handleSignOut}><span className="material-symbols-outlined">move_item</span>Log out</button>
                 </div>
             </div>
 

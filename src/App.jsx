@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router';
 import fullCardData from './components/index/cardData';
 import Home from './pages/Home';
@@ -15,10 +15,12 @@ import PlacesBeenPage from './pages/PlacesBeenPage';
 import SavedPage from './pages/SavedPage';
 import Splash from './pages/Splash';
 import SignInPage from './pages/SignInPage';
+import DEFAULT_USERS from './components/signin/signIn.json'
 import LoginPage from './pages/LoginPage';
 import SettingsPage from './pages/SettingsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import { ref, push } from 'firebase/database';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db } from './main';
 
 export default function App() {
@@ -26,6 +28,17 @@ export default function App() {
     const [cards, setCards] = useState(fullCardData);
     const[trips, setTrips] = useState(tripsData);
     const [tripId, setTripId] = useState(trips.length + 1);
+    const[user, setUser] = useState(DEFAULT_USERS[0]);
+
+    useEffect(() => {
+        const auth = getAuth();
+
+        onAuthStateChanged(auth, (firebaseUserObj) => {
+            console.log("auth state changed");
+            console.log(firebaseUserObj);
+            setUser(firebaseUserObj);
+        })
+    }, [])
 
     const addCard = (log) => {
         const destination = encodeURIComponent(log.destination);

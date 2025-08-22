@@ -1,5 +1,7 @@
 import React, {use, useState} from 'react';
 import { Link, useNavigate } from 'react-router';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { getAuth, GoogleAuthProvider, EmailAuthProvider } from 'firebase/auth'
 
 function SignIn(props) {
     const info = props.userData;
@@ -9,6 +11,22 @@ function SignIn(props) {
     const [rememberMe, setRememberMe] = useState(false);
 
     const navigate = useNavigate();
+
+    const authenticator = getAuth();
+    const firebaseUIConfig = {
+        signInOptions: [
+            EmailAuthProvider.PROVIDER_ID,
+            GoogleAuthProvider.PROVIDER_ID,
+        ],
+        signInFlow: "popup",
+        credentialHelper: "none", 
+        callbacks: {
+            signInSuccessWithAuthResult: () => {
+                navigate('/');
+                return false;
+            }
+        }
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -31,7 +49,7 @@ function SignIn(props) {
                     <h1 className="signin-title">Ready to Wander?</h1>
                     <p className="signin-subtitle">Please enter your details</p>
 
-                    <form onSubmit={handleSubmit}>
+                    {/* <form onSubmit={handleSubmit}>
                         <div className="signin-form">
                             <label htmlFor="email" className="signin-form-label">Email address</label>
                             <input type="email" id="email" className="signin-input" placeholder="Enter your email" value={email} onChange={(event) => setEmail(event.target.value)} />
@@ -48,7 +66,12 @@ function SignIn(props) {
                         </div>
 
                         <button type="submit" className="signin-btn" onClick={handleClick}>Sign in</button>
-                    </form>
+                    </form> */}
+                    
+                    <StyledFirebaseAuth  className="signin-form"
+                        firebaseAuth={authenticator}
+                        uiConfig={firebaseUIConfig}
+                    />
                 </div>
             </div>
 
