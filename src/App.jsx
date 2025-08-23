@@ -70,9 +70,11 @@ export default function App() {
             const files = Array.isArray(log.file) ? log.file : (log.file ? [log.file] : []);
             return Promise.all(files.map((f) => uploadFileAndGetUrl(f, "logs/")))
             .then((uploaded) => {
+                // We couldn't figure out how to get the images to show up when we added logs
+                // so we consulted AI.
                 const images = uploaded.map(({ url }, i) => ({
-                src: url,
-                alt: files[i]?.name || `Uploaded image ${i + 1}`
+                    src: url,
+                    alt: files[i]?.name || `Uploaded image ${i + 1}`
                 }));
     
                 const newCard = {
@@ -84,6 +86,8 @@ export default function App() {
                 rating: `${log.rating}/5`,
                 images,
                 text: log.comments,
+                // We weren't sure how to configure the tags the way we wanted to
+                // so we asked AI to help us.
                 tags: log.tags.map((tag) => ({
                     label: tag.replace(/-/g, ' '),
                     className: tag
@@ -112,6 +116,8 @@ export default function App() {
         let uploadedUrl = "/img/default-trip.jpg";
         let alt = `Trip to ${trip.destination}`;
         
+        // For this specific condition, we didn't know how to have the images show up
+        // in add trip, so we asked ChatGPT for help.
         if (trip.file) {
             const { url } = await uploadFileAndGetUrl(trip.file, "trips/");
             uploadedUrl = url;
@@ -140,9 +146,6 @@ export default function App() {
     return (
         <>
             <Routes>
-                {/* <Route path="/" element={<Home openMenu={() => setMenuOpen(true)} />}/> */}
-                {/* <Route path="/" element={<Home cards={cards} openMenu={() => setMenuOpen(true)} />} />
-                 */}
                 <Route path="/" element={<Home openMenu={() => setMenuOpen(true)} />} />
                 <Route path="/splash" element={<Splash />}/>
                 <Route path="/sign-in" element={<SignInPage />}/>
