@@ -87,7 +87,8 @@ export default function Home({ openMenu }) {
 	};
 	
 
-	// Filtering logic
+	// This allows filtering for cards:
+	// Some of it's capabilities include filtering by tags, and filtering the search bar by keywords
 	const filteredCards = [];
 	for (const card of cards) {
 		let matchesTag = true;
