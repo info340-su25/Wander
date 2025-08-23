@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router';
-import fullCardData from './components/index/cardData';
 import Home from './pages/Home';
 import ProfilePage from './pages/ProfilePage';
 import ViewTripsPage from './pages/ViewTripsPage';
@@ -36,13 +35,12 @@ function uploadFileAndGetUrl(file, pathPrefix = "") {
     const fileRef = storageRef(storage, fullPath);
   
     return uploadBytes(fileRef, file)
-      .then(() => getDownloadURL(fileRef))
-      .then((url) => ({ url, fullPath }));
+        .then(() => getDownloadURL(fileRef))
+        .then((url) => ({ url, fullPath }));
 }
 
 export default function App() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [cards, setCards] = useState(fullCardData);
     const[trips, setTrips] = useState(tripsData);
     const [tripId, setTripId] = useState(trips.length + 1);
     const[user, setUser] = useState(DEFAULT_USERS[0]);
@@ -96,7 +94,6 @@ export default function App() {
                 saved: false
                 };
     
-                setCards((prevLogs) => [newCard, ...prevLogs]);
     
                 const cardsRef = ref(db, 'cards');
                 return push(cardsRef, newCard);
@@ -143,7 +140,10 @@ export default function App() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Home openMenu={() => setMenuOpen(true)} />}/>
+                {/* <Route path="/" element={<Home openMenu={() => setMenuOpen(true)} />}/> */}
+                {/* <Route path="/" element={<Home cards={cards} openMenu={() => setMenuOpen(true)} />} />
+                 */}
+                <Route path="/" element={<Home openMenu={() => setMenuOpen(true)} />} />
                 <Route path="/splash" element={<Splash />}/>
                 <Route path="/sign-in" element={<SignInPage />}/>
                 <Route path="/login" element={<LoginPage />}/>

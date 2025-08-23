@@ -43,7 +43,7 @@ function CreateNewTrip(props) {
     };
     const handleFileChange = (event) => {
         const image = event.target.files && event.target.files[0] ? event.target.files[0] : null;
-+       setFile(image);
+            + setFile(image);
     };
     const handleDescriptionChange = (event) => {
         setDescription(event.target.value)
