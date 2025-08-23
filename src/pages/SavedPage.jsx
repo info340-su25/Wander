@@ -18,7 +18,13 @@ export default function SavedPage({ openMenu }) {
                     fbKey: key
                 }));
 
-                const saved = loadedCards.filter(card => card.saved === true);
+                const saved = loadedCards
+                    .filter(card => card.saved === true)
+                    .map(card => ({
+                        ...card,
+                        path: card.path || (card.images?.[0]?.src ?? ''),
+                        alt: card.alt || (card.images?.[0]?.alt ?? card.place),
+                }));
 
                 const filtered = saved.filter(
                     (card) => !savedData.some((s) => s.place === card.place)

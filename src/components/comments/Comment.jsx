@@ -9,7 +9,6 @@ export default function Comment(props) {
             <div className="comment-content">
                 <p className="comment-username">{username}</p>
                 <p className="comment-text">{text}</p>
-                <p className="comment-reply">Reply</p>
             </div>
         </div>
     );

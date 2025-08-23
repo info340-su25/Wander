@@ -62,9 +62,19 @@ export default function Home({ openMenu }) {
 				const updatedCard = { ...card };
 				updatedCard.saved = !updatedCard.saved;
 	
+				if (updatedCard.saved && updatedCard.images?.length > 0) {
+					updatedCard.path = updatedCard.images[0].src;
+					updatedCard.alt = updatedCard.images[0].alt;
+				} else {
+					delete updatedCard.path;
+					delete updatedCard.alt;
+				}
+	
 				const cardRef = ref(db, `cards/${card.fbKey}`);
 				update(cardRef, {
-					saved: updatedCard.saved
+					saved: updatedCard.saved,
+					path: updatedCard.path || null,
+					alt: updatedCard.alt || null
 				});
 	
 				updated.push(updatedCard);
@@ -74,7 +84,7 @@ export default function Home({ openMenu }) {
 		}
 	
 		setCards(updated);
-	}
+	};
 	
 
 	// Filtering logic

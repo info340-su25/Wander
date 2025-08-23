@@ -2,7 +2,7 @@ import React from "react";
 import CreateNewLog from "../components/create-new-log/CreateNewLog";
 
 const logData = {
-    destination: 'Shanghai',
+    destination: 'The Bund',
     rating: '4.5',
     comments: 'Beautiful city and night life!! Food is to die for. Make sure to bring a hand fan because it can get super hot.',
     tags: ['scenic', 'walking-friendly']

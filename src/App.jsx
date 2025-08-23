@@ -22,6 +22,23 @@ import PrivacyPage from './pages/PrivacyPage';
 import { ref, push } from 'firebase/database';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db } from './main';
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
+
+function getSharedStorage() {
+    return getStorage(undefined, "gs://info340-media.firebasestorage.app");
+}
+const GROUP_FOLDER = "group-B1";
+
+function uploadFileAndGetUrl(file, pathPrefix = "") {
+    const storage = getSharedStorage();
+    const name = `${Date.now()}-${file.name.replaceAll("/", "_")}`;
+    const fullPath = `${GROUP_FOLDER}/${pathPrefix}${name}`;
+    const fileRef = storageRef(storage, fullPath);
+  
+    return uploadBytes(fileRef, file)
+      .then(() => getDownloadURL(fileRef))
+      .then((url) => ({ url, fullPath }));
+}
 
 export default function App() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -43,74 +60,83 @@ export default function App() {
     const addCard = (log) => {
         const destination = encodeURIComponent(log.destination);
         const url = `https://nominatim.openstreetmap.org/search?format=json&q=${destination}`;
-
+    
         fetch(url)
-            .then((res) => res.json())
-            .then((data) => {
-                const addressParts = data.length > 0 ? data[0].display_name.split(',') : [];
-                const trimmedParts = addressParts.slice(-3).map(part => part.trim());
-                const attractionLocation = `${trimmedParts[0]}, ${trimmedParts[2]}`;
-
+        .then((res) => res.json())
+        .then((data) => {
+            const addressParts = data.length > 0 ? data[0].display_name.split(',') : [];
+            const trimmedParts = addressParts.slice(-3).map((part) => part.trim());
+            // We will assume that users will add an actual attraction name rather than a city itself.
+            const attractionLocation = `${trimmedParts[0] || ""}, ${trimmedParts[2] || ""}`;
+    
+            const files = Array.isArray(log.file) ? log.file : (log.file ? [log.file] : []);
+            return Promise.all(files.map((f) => uploadFileAndGetUrl(f, "logs/")))
+            .then((uploaded) => {
+                const images = uploaded.map(({ url }, i) => ({
+                src: url,
+                alt: files[i]?.name || `Uploaded image ${i + 1}`
+                }));
+    
                 const newCard = {
-                    id: Date.now(),
-                    userImg: "/img/hanna_pan.jpg",
-                    userName: "Hanna",
-                    place: log.destination,
-                    location: attractionLocation,
-                    rating: `${log.rating}/5`,
-                    images: Array.isArray(log.file) && log.file.length > 0
-                        ? log.file.map((f, i) => ({
-                            src: URL.createObjectURL(f),
-                            alt: f.name || `Uploaded image ${i + 1}`
-                        }))
-                        : [],
-                    text: log.comments,
-                    tags: log.tags.map((tag) => ({
-                        label: tag.replace(/-/g, ' '),
-                        className: tag
-                    })),
-                    timestamp: "Just now",
-                    likes: 0,
-                    liked: false,
-                    saved: false
+                id: Date.now(),
+                userImg: "/img/hanna_pan.jpg",
+                userName: "Hanna",
+                place: log.destination,
+                location: attractionLocation,
+                rating: `${log.rating}/5`,
+                images,
+                text: log.comments,
+                tags: log.tags.map((tag) => ({
+                    label: tag.replace(/-/g, ' '),
+                    className: tag
+                })),
+                timestamp: "Just now",
+                likes: 0,
+                liked: false,
+                saved: false
                 };
-
+    
                 setCards((prevLogs) => [newCard, ...prevLogs]);
-
-      
+    
                 const cardsRef = ref(db, 'cards');
-                push(cardsRef, newCard)
-                    .then(() => {
-                        console.log("New card added to Firebase!");
-                    })
-                    .catch((error) => {
-                        console.error("Error adding card to Firebase:", error);
-                    });
+                return push(cardsRef, newCard);
             });
+        })
+        .then(() => {
+            console.log("New card added to Firebase!");
+        })
+        .catch((error) => {
+            console.error("Error adding card to Firebase:", error);
+            alert("Sorry, we couldn't upload your images. Try again.");
+        });
     };
 
-    const addTrip = (trip) => {
+    const addTrip = async (trip) => {
+        let uploadedUrl = "/img/default-trip.jpg";
+        let alt = `Trip to ${trip.destination}`;
+        
+        if (trip.file) {
+            const { url } = await uploadFileAndGetUrl(trip.file, "trips/");
+            uploadedUrl = url;
+            alt = trip.file.name || alt;
+        }
+        
         const newTrip = {
             id: tripId,
             place: trip.destination,
-            alt: trip.file ? trip.file.name : `Trip to ${trip.destination}`,
-            path: trip.file ? URL.createObjectURL(trip.file) : "/img/default-trip.jpg",
+            alt,
+            path: uploadedUrl,
             description: trip.description,
             attractions: trip.attractions,
             collaborators: trip.collaborators
         };
-
+        
         setTrips((prevTrips) => [newTrip, ...prevTrips]);
         setTripId(tripId + 1);
-
+        
         const tripsRef = ref(db, 'trips');
-        push(tripsRef, newTrip)
-            .then(() => {
-                console.log("New trip added to Firebase!");
-            })
-            .catch((error) => {
-                console.error("Error adding trip to Firebase:", error);
-            });
+        await push(tripsRef, newTrip);
+        console.log("New trip added to Firebase!");
     };
     
 

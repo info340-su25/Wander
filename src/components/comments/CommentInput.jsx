@@ -5,8 +5,8 @@ export default function CommentInput() {
 
     const handleSubmit = (event) => {
         console.log("Comment submitted:", text);
-        setText('');
     };
+    
 
     return (
         <form className="comment-input-bar" onSubmit={handleSubmit}>
